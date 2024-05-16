@@ -152,6 +152,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_COMMAND:
         if (LOWORD(wParam) == 1)
         {
+            // 最小化窗口
+            ShowWindow(hwnd, SW_MINIMIZE);
+
             // 获取用户输入的延迟时间
             wchar_t buffer[10];
             GetWindowText(hEdit, buffer, 10);
@@ -162,9 +165,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
             // 截屏
             CaptureScreenshot();
-            MessageBox(hwnd, L"Screenshot saved as screenshot.png", L"Message", MB_OK);
+            MessageBox(hwnd, L"Screenshot saved as screenshot.bmp", L"Message", MB_OK);
         }
         break;
+
     case WM_CLOSE:
         // 在这里处理 WM_CLOSE 消息以防止窗口关闭
         if (MessageBox(hwnd, L"Are you sure you want to close?", L"Close", MB_OKCANCEL) == IDOK)
