@@ -1,55 +1,127 @@
 #include <windows.h>
+#include <gdiplus.h>
+#include <iostream>
 
-const char g_szClassName[] = "myWindowClass";
+#pragma comment (lib,"Gdiplus.lib")
+#pragma comment (lib,"Gdi32.lib")
+#pragma comment (lib,"User32.lib")
+#pragma comment (lib,"Ole32.lib")
 
-// Step 4: the Window Procedure
+using namespace Gdiplus;
+
+const wchar_t g_szClassName[] = L"myWindowClass";
+ULONG_PTR gdiplusToken;
+
+// 初始化 GDI+
+void InitGDIPlus() {
+    GdiplusStartupInput gdiplusStartupInput;
+    Status status = GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);
+    if (status != Ok) {
+        std::wcerr << L"Failed to initialize GDI+" << std::endl;
+        exit(1);
+    }
+}
+
+// 关闭 GDI+
+void ShutdownGDIPlus() {
+    GdiplusShutdown(gdiplusToken);
+}
+
+// 保存截图的函数
+void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
+    // 从 HBITMAP 创建 GDI+ Bitmap
+    Bitmap bitmap(hBitmap, nullptr);
+    if (bitmap.GetLastStatus() != Ok) {
+        std::wcerr << L"Failed to create GDI+ Bitmap" << std::endl;
+        return;
+    }
+
+    CLSID clsid;
+    if (CLSIDFromString(L"{557CF400-1A04-11D3-9A73-0000F81EF32E}", &clsid) != S_OK) {
+        std::wcerr << L"Failed to get CLSID" << std::endl;
+        return;
+    }
+
+    // 保存到文件
+    Status status = bitmap.Save(filePath, &clsid, nullptr);
+    if (status != Ok) {
+        std::wcerr << L"Failed to save bitmap to file" << std::endl;
+    }
+    else {
+        std::wcout << L"Screenshot saved as " << filePath << std::endl;
+    }
+}
+
+// 截屏函数
+void CaptureScreenshot() {
+    // 获取屏幕尺寸
+    int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    // 创建整个屏幕的设备上下文
+    HDC hScreenDC = GetDC(nullptr);
+    HDC hMemoryDC = CreateCompatibleDC(hScreenDC);
+
+    // 创建一个与屏幕设备上下文兼容的位图
+    HBITMAP hBitmap = CreateCompatibleBitmap(hScreenDC, screenWidth, screenHeight);
+    if (!hBitmap) {
+        std::wcerr << L"Failed to create compatible bitmap" << std::endl;
+        DeleteDC(hMemoryDC);
+        ReleaseDC(nullptr, hScreenDC);
+        return;
+    }
+
+    // 将新位图选择到内存设备上下文中
+    HBITMAP hOldBitmap = (HBITMAP)SelectObject(hMemoryDC, hBitmap);
+
+    // 进行位块传输到我们的兼容内存 DC 中
+    BitBlt(hMemoryDC, 0, 0, screenWidth, screenHeight, hScreenDC, 0, 0, SRCCOPY);
+
+    // 恢复旧位图
+    SelectObject(hMemoryDC, hOldBitmap);
+
+    // 保存位图到文件
+    SaveBitmapToFile(hBitmap, L"screenshot.bmp");
+
+    // 清理
+    DeleteObject(hBitmap);
+    DeleteDC(hMemoryDC);
+    ReleaseDC(nullptr, hScreenDC);
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     switch (msg)
     {
     case WM_CREATE:
     {
-        // Create a button
         CreateWindow(
-            "BUTTON",  // Predefined class; Unicode assumed 
-            "Click Me",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
-            50,         // x position 
-            50,         // y position 
-            100,        // Button width
-            30,        // Button height
-            hwnd,       // Parent window
-            (HMENU)1,  // ID of the button
+            L"BUTTON",  // 预定义类；假定为 Unicode 
+            L"Click Me",      // 按钮文本 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // 样式 
+            100,         // x 位置 
+            100,         // y 位置 
+            100,        // 按钮宽度
+            30,        // 按钮高度
+            hwnd,       // 父窗口
+            (HMENU)1,       // 无菜单。
             (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE),
-            NULL);      // Pointer not needed.
+            NULL);      // 无需指针。
     }
     break;
     case WM_COMMAND:
-        if (LOWORD(wParam) == 1) // Button ID
+        if (LOWORD(wParam) == 1)
         {
-            // Show a simple message box
-            MessageBox(hwnd, "This is a simple message box.", "Message Box", MB_OK);
-
-            // Show a message box with Yes/No buttons
-            int response = MessageBox(hwnd, "Do you like programming?", "Question", MB_YESNO | MB_ICONQUESTION);
-            if (response == IDYES)
-            {
-                MessageBox(hwnd, "You pressed Yes!", "Response", MB_OK);
-            }
-            else if (response == IDNO)
-            {
-                MessageBox(hwnd, "You pressed No!", "Response", MB_OK);
-            }
-
-            // Show a message box with a warning icon
-            MessageBox(hwnd, "This is a warning message.", "Warning", MB_OK | MB_ICONWARNING);
-
-            // Show a message box with an error icon
-            MessageBox(hwnd, "This is an error message.", "Error", MB_OK | MB_ICONERROR);
+            CaptureScreenshot();
+            MessageBox(hwnd, L"Screenshot saved as screenshot.bmp", L"Message", MB_OK);
         }
         break;
     case WM_CLOSE:
-        DestroyWindow(hwnd);
+        // 在这里处理 WM_CLOSE 消息以防止窗口关闭
+        if (MessageBox(hwnd, L"Are you sure you want to close?", L"Close", MB_OKCANCEL) == IDOK)
+        {
+            DestroyWindow(hwnd);
+        }
         break;
     case WM_DESTROY:
         PostQuitMessage(0);
@@ -60,14 +132,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-// Entry point of the application
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+    InitGDIPlus();
+
     WNDCLASSEX wc;
     HWND hwnd;
     MSG Msg;
 
-    // Step 1: Registering the Window Class
     wc.cbSize = sizeof(WNDCLASSEX);
     wc.style = 0;
     wc.lpfnWndProc = WndProc;
@@ -83,33 +155,35 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     if (!RegisterClassEx(&wc))
     {
-        MessageBox(NULL, "Window Registration Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
+        MessageBox(NULL, L"Window Registration Failed!", L"Error!", MB_ICONEXCLAMATION | MB_OK);
+        ShutdownGDIPlus();
         return 0;
     }
 
-    // Step 2: Creating the Window
     hwnd = CreateWindowEx(
         WS_EX_CLIENTEDGE,
         g_szClassName,
-        "Message Box Demo",
+        L"Screenshot Application",
         WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, CW_USEDEFAULT, 300, 200,
+        CW_USEDEFAULT, CW_USEDEFAULT, 540, 200,
         NULL, NULL, hInstance, NULL);
 
     if (hwnd == NULL)
     {
-        MessageBox(NULL, "Window Creation Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
+        MessageBox(NULL, L"Window Creation Failed!", L"Error!", MB_ICONEXCLAMATION | MB_OK);
+        ShutdownGDIPlus();
         return 0;
     }
 
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
 
-    // Step 3: The Message Loop
     while (GetMessage(&Msg, NULL, 0, 0) > 0)
     {
         TranslateMessage(&Msg);
         DispatchMessage(&Msg);
     }
-    return Msg.wParam;
+
+    ShutdownGDIPlus();
+    return (int)Msg.wParam;
 }

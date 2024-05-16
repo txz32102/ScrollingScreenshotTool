@@ -1,7 +1,6 @@
 #include <windows.h>
 #include <gdiplus.h>
 #include <iostream>
-#include <fstream>
 
 #pragma comment (lib,"Gdiplus.lib")
 #pragma comment (lib,"Gdi32.lib")
@@ -10,102 +9,84 @@
 
 using namespace Gdiplus;
 
-const char g_szClassName[] = "myWindowClass";
+const wchar_t g_szClassName[] = L"myWindowClass";
+ULONG_PTR gdiplusToken;
 
-// Function to save the screenshot
-bool SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
+// 初始化 GDI+
+void InitGDIPlus() {
     GdiplusStartupInput gdiplusStartupInput;
-    ULONG_PTR gdiplusToken;
-
-    // Initialize GDI+.
-    if (GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr) != Ok) {
-        std::cerr << "Failed to initialize GDI+." << std::endl;
-        return false;
+    Status status = GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);
+    if (status != Ok) {
+        std::wcerr << L"Failed to initialize GDI+" << std::endl;
+        exit(1);
     }
+}
 
-    // Create GDI+ Bitmap from HBITMAP
+// 关闭 GDI+
+void ShutdownGDIPlus() {
+    GdiplusShutdown(gdiplusToken);
+}
+
+// 保存截图的函数
+void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
+    // 从 HBITMAP 创建 GDI+ Bitmap
     Bitmap bitmap(hBitmap, nullptr);
+    if (bitmap.GetLastStatus() != Ok) {
+        std::wcerr << L"Failed to create GDI+ Bitmap" << std::endl;
+        return;
+    }
 
     CLSID clsid;
     if (CLSIDFromString(L"{557CF400-1A04-11D3-9A73-0000F81EF32E}", &clsid) != S_OK) {
-        std::cerr << "Failed to get CLSID for BMP encoder." << std::endl;
-        GdiplusShutdown(gdiplusToken);
-        return false;
+        std::wcerr << L"Failed to get CLSID" << std::endl;
+        return;
     }
 
-    // Save to file
-    if (bitmap.Save(filePath, &clsid, nullptr) != Ok) {
-        std::cerr << "Failed to save bitmap to file." << std::endl;
-        GdiplusShutdown(gdiplusToken);
-        return false;
+    // 保存到文件
+    Status status = bitmap.Save(filePath, &clsid, nullptr);
+    if (status != Ok) {
+        std::wcerr << L"Failed to save bitmap to file" << std::endl;
     }
-
-    // Cleanup GDI+
-    GdiplusShutdown(gdiplusToken);
-    return true;
+    else {
+        std::wcout << L"Screenshot saved as " << filePath << std::endl;
+    }
 }
 
-// Function to capture the screenshot
-bool CaptureScreenshot() {
-    // Get screen dimensions
+// 截屏函数
+void CaptureScreenshot() {
+    // 获取屏幕尺寸
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);
     int screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-    // Create a device context for the entire screen
+    // 创建整个屏幕的设备上下文
     HDC hScreenDC = GetDC(nullptr);
-    if (!hScreenDC) {
-        std::cerr << "Failed to get screen DC." << std::endl;
-        return false;
-    }
-
     HDC hMemoryDC = CreateCompatibleDC(hScreenDC);
-    if (!hMemoryDC) {
-        std::cerr << "Failed to create memory DC." << std::endl;
-        ReleaseDC(nullptr, hScreenDC);
-        return false;
-    }
 
-    // Create a bitmap compatible with the screen device context
+    // 创建一个与屏幕设备上下文兼容的位图
     HBITMAP hBitmap = CreateCompatibleBitmap(hScreenDC, screenWidth, screenHeight);
     if (!hBitmap) {
-        std::cerr << "Failed to create compatible bitmap." << std::endl;
+        std::wcerr << L"Failed to create compatible bitmap" << std::endl;
         DeleteDC(hMemoryDC);
         ReleaseDC(nullptr, hScreenDC);
-        return false;
+        return;
     }
 
-    // Select the new bitmap into the memory device context
+    // 将新位图选择到内存设备上下文中
     HBITMAP hOldBitmap = (HBITMAP)SelectObject(hMemoryDC, hBitmap);
-    if (!hOldBitmap) {
-        std::cerr << "Failed to select bitmap into memory DC." << std::endl;
-        DeleteObject(hBitmap);
-        DeleteDC(hMemoryDC);
-        ReleaseDC(nullptr, hScreenDC);
-        return false;
-    }
 
-    // Bit block transfer into our compatible memory DC
-    if (!BitBlt(hMemoryDC, 0, 0, screenWidth, screenHeight, hScreenDC, 0, 0, SRCCOPY)) {
-        std::cerr << "BitBlt failed." << std::endl;
-        SelectObject(hMemoryDC, hOldBitmap);
-        DeleteObject(hBitmap);
-        DeleteDC(hMemoryDC);
-        ReleaseDC(nullptr, hScreenDC);
-        return false;
-    }
+    // 进行位块传输到我们的兼容内存 DC 中
+    BitBlt(hMemoryDC, 0, 0, screenWidth, screenHeight, hScreenDC, 0, 0, SRCCOPY);
 
-    // Restore the old bitmap
+    // 恢复旧位图
     SelectObject(hMemoryDC, hOldBitmap);
 
-    // Save the bitmap to a file
-    bool saveResult = SaveBitmapToFile(hBitmap, L"screenshot.bmp");
+    // 保存位图到文件
+    SaveBitmapToFile(hBitmap, L"screenshot.bmp");
 
-    // Cleanup
+    // 清理
     DeleteObject(hBitmap);
     DeleteDC(hMemoryDC);
     ReleaseDC(nullptr, hScreenDC);
-
-    return saveResult;
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -115,34 +96,32 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_CREATE:
     {
         CreateWindow(
-            "BUTTON",  // Predefined class; Unicode assumed 
-            "Click Me",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
-            100,         // x position 
-            100,         // y position 
-            100,        // Button width
-            30,        // Button height
-            hwnd,       // Parent window
-            (HMENU)1,       // No menu.
+            L"BUTTON",  // 预定义类；假定为 Unicode 
+            L"Click Me",      // 按钮文本 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // 样式 
+            100,         // x 位置 
+            100,         // y 位置 
+            100,        // 按钮宽度
+            30,        // 按钮高度
+            hwnd,       // 父窗口
+            (HMENU)1,       // 无菜单。
             (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE),
-            NULL);      // Pointer not needed.
+            NULL);      // 无需指针。
     }
     break;
     case WM_COMMAND:
         if (LOWORD(wParam) == 1)
         {
-            bool result = CaptureScreenshot();
-            MessageBox(hwnd, "Screenshot saved as screenshot.bmp", "Message", MB_OK);
-            if (result) {
-                MessageBox(hwnd, "Screenshot saved as screenshot.bmp", "Message", MB_OK);
-            }
-            else {
-                MessageBox(hwnd, "Failed to save screenshot.", "Error", MB_OK | MB_ICONERROR);
-            }
+            CaptureScreenshot();
+            MessageBox(hwnd, L"Screenshot saved as screenshot.bmp", L"Message", MB_OK);
         }
         break;
     case WM_CLOSE:
-        DestroyWindow(hwnd);
+        // 在这里处理 WM_CLOSE 消息以防止窗口关闭
+        if (MessageBox(hwnd, L"Are you sure you want to close?", L"Close", MB_OKCANCEL) == IDOK)
+        {
+            DestroyWindow(hwnd);
+        }
         break;
     case WM_DESTROY:
         PostQuitMessage(0);
@@ -155,6 +134,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+    InitGDIPlus();
+
     WNDCLASSEX wc;
     HWND hwnd;
     MSG Msg;
@@ -174,21 +155,23 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     if (!RegisterClassEx(&wc))
     {
-        MessageBox(NULL, "Window Registration Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
+        MessageBox(NULL, L"Window Registration Failed!", L"Error!", MB_ICONEXCLAMATION | MB_OK);
+        ShutdownGDIPlus();
         return 0;
     }
 
     hwnd = CreateWindowEx(
         WS_EX_CLIENTEDGE,
         g_szClassName,
-        "homework",
+        L"Screenshot Application",
         WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, CW_USEDEFAULT, 500, 500,
+        CW_USEDEFAULT, CW_USEDEFAULT, 540, 200,
         NULL, NULL, hInstance, NULL);
 
     if (hwnd == NULL)
     {
-        MessageBox(NULL, "Window Creation Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
+        MessageBox(NULL, L"Window Creation Failed!", L"Error!", MB_ICONEXCLAMATION | MB_OK);
+        ShutdownGDIPlus();
         return 0;
     }
 
@@ -200,5 +183,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         TranslateMessage(&Msg);
         DispatchMessage(&Msg);
     }
-    return Msg.wParam;
+
+    ShutdownGDIPlus();
+    return (int)Msg.wParam;
 }
