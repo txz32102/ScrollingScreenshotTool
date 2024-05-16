@@ -1,6 +1,7 @@
 #include <windows.h>
 #include <gdiplus.h>
 #include <iostream>
+#include <string>
 
 #pragma comment (lib,"Gdiplus.lib")
 #pragma comment (lib,"Gdi32.lib")
@@ -11,6 +12,7 @@ using namespace Gdiplus;
 
 const wchar_t g_szClassName[] = L"myWindowClass";
 ULONG_PTR gdiplusToken;
+HWND hEdit;  // 输入框句柄
 
 // 初始化 GDI+
 void InitGDIPlus() {
@@ -27,6 +29,31 @@ void ShutdownGDIPlus() {
     GdiplusShutdown(gdiplusToken);
 }
 
+// 获取编码器 CLSID
+int GetEncoderClsid(const WCHAR* format, CLSID* pClsid) {
+    UINT num = 0;          // 编码器数量
+    UINT size = 0;         // 存储编码器信息的大小
+
+    GetImageEncodersSize(&num, &size);
+    if (size == 0) return -1;  // 没有编码器
+
+    ImageCodecInfo* pImageCodecInfo = (ImageCodecInfo*)(malloc(size));
+    if (pImageCodecInfo == NULL) return -1;  // 内存分配失败
+
+    GetImageEncoders(num, size, pImageCodecInfo);
+
+    for (UINT j = 0; j < num; ++j) {
+        if (wcscmp(pImageCodecInfo[j].MimeType, format) == 0) {
+            *pClsid = pImageCodecInfo[j].Clsid;
+            free(pImageCodecInfo);
+            return j;  // 成功返回下标
+        }
+    }
+
+    free(pImageCodecInfo);
+    return -1;  // 没有找到
+}
+
 // 保存截图的函数
 void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
     // 从 HBITMAP 创建 GDI+ Bitmap
@@ -37,8 +64,8 @@ void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
     }
 
     CLSID clsid;
-    if (CLSIDFromString(L"{557CF400-1A04-11D3-9A73-0000F81EF32E}", &clsid) != S_OK) {
-        std::wcerr << L"Failed to get CLSID" << std::endl;
+    if (GetEncoderClsid(L"image/png", &clsid) == -1) {
+        std::wcerr << L"Failed to get PNG encoder CLSID" << std::endl;
         return;
     }
 
@@ -81,12 +108,17 @@ void CaptureScreenshot() {
     SelectObject(hMemoryDC, hOldBitmap);
 
     // 保存位图到文件
-    SaveBitmapToFile(hBitmap, L"screenshot.bmp");
+    SaveBitmapToFile(hBitmap, L"screenshot.png");
 
     // 清理
     DeleteObject(hBitmap);
     DeleteDC(hMemoryDC);
     ReleaseDC(nullptr, hScreenDC);
+}
+
+// 延迟指定秒数
+void Delay(int seconds) {
+    Sleep(seconds * 1000);  // 将秒数转换为毫秒
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -107,13 +139,30 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             (HMENU)1,       // 无菜单。
             (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE),
             NULL);      // 无需指针。
+
+        // 创建输入框
+        hEdit = CreateWindow(
+            L"EDIT",   // 预定义类
+            L"",       // 初始文本
+            WS_CHILD | WS_VISIBLE | WS_BORDER | ES_NUMBER, // 样式
+            100, 50, 100, 25,   // 位置和大小
+            hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
     }
     break;
     case WM_COMMAND:
         if (LOWORD(wParam) == 1)
         {
+            // 获取用户输入的延迟时间
+            wchar_t buffer[10];
+            GetWindowText(hEdit, buffer, 10);
+            int delaySeconds = _wtoi(buffer);  // 将文本转换为整数
+
+            // 延迟指定的秒数
+            Delay(delaySeconds);
+
+            // 截屏
             CaptureScreenshot();
-            MessageBox(hwnd, L"Screenshot saved as screenshot.bmp", L"Message", MB_OK);
+            MessageBox(hwnd, L"Screenshot saved as screenshot.png", L"Message", MB_OK);
         }
         break;
     case WM_CLOSE:
