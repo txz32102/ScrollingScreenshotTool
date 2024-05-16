@@ -1,4 +1,4 @@
-﻿01:06:12.196     0>Search paths being used for $(MSBuildExtensionsPath) are C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild;$(MSBuildProgramFiles32)\MSBuild
+﻿09:17:41.328     0>Search paths being used for $(MSBuildExtensionsPath) are C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild;$(MSBuildProgramFiles32)\MSBuild
                    Trying to import C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\$(MSBuildToolsVersion)\Microsoft.Common.props using extensions path C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild
                    Property reassignment: $(MSBuildProjectExtensionsPath)="C:\Users\13816\Desktop\ScrollingScreenshotTool\obj\" (previous value: "obj\") at C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Microsoft.Common.props (56,5)
                    Search paths being used for $(MSBuildExtensionsPath) are C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild;$(MSBuildProgramFiles32)\MSBuild
@@ -772,9 +772,9 @@
                    Overriding target "ComputeMetaGenInputs" in project "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MetaGen.targets" with target "ComputeMetaGenInputs" from project "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets".
                    Overriding target "GetNativeManifest" in project "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" with target "GetNativeManifest" from project "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets".
                    Overriding target "GetTargetPathWithTargetPlatformMoniker" in project "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" with target "GetTargetPathWithTargetPlatformMoniker" from project "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.DesignTime.targets".
-Build started 2024/5/16 1:06:12.
-Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" on node 2 (Build target(s)).
-01:06:12.204     1>Initial Properties:
+Build started 2024/5/16 9:17:41.
+Logging verbosity is set to: Diagnostic.09:17:41.337     1>Project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" on node 2 (Build target(s)).
+09:17:41.337     1>Initial Properties:
                    _ApplicableDebuggers = Desktop
                    _ApplicationTypeAndRevisionFound = true
                    _BuildActionType = Build
@@ -2152,7 +2152,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    VSIDEResolvedNonMSBuildProjectOutputs = <VSIDEResolvedNonMSBuildProjectOutputs />
                    VSInstallDir = C:\Program Files\Microsoft Visual Studio\2022\Community\
                    VsInstallRoot = C:\Program Files\Microsoft Visual Studio\2022\Community
-                   VSTEL_CurrentSolutionBuildID = 1739099726
+                   VSTEL_CurrentSolutionBuildID = 39194374
                    VSTEL_SolutionSessionID = {964E8BEF-CF7A-431D-A327-742106EDEE5E}
                    VSVersion = $(VisualStudioVersion)
                    WebBrowserDebuggerDebuggerType = Auto
@@ -2211,8 +2211,8 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    XamlTemporaryAssemblyName = ScrollingScreenshotTool
                    YieldDuringToolExecution = true
 
-01:06:12.204     1>Target "EnableIntermediateOutputPathMismatchWarning" skipped, due to false condition; ('$(RestoreProjectStyle)' == 'PackageReference') was evaluated as ('' == 'PackageReference').
-01:06:12.204     1>Target "_CheckForInvalidConfigurationAndPlatform: (TargetId:2)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "SetTelemetryEnvironmentVariables" depends on it):
+09:17:41.337     1>Target "EnableIntermediateOutputPathMismatchWarning" skipped, due to false condition; ('$(RestoreProjectStyle)' == 'PackageReference') was evaluated as ('' == 'PackageReference').
+09:17:41.337     1>Target "_CheckForInvalidConfigurationAndPlatform: (TargetId:2)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "SetTelemetryEnvironmentVariables" depends on it):
                    Set Property: _InvalidConfigurationMessageText=The BaseOutputPath/OutputPath property is not set for project 'ScrollingScreenshotTool.vcxproj'.  Please check to make sure that you have specified a valid combination of Configuration and Platform for this project.  Configuration='Debug'  Platform='x64'.
                    Set Property: _InvalidConfigurationMessageText=The BaseOutputPath/OutputPath property is not set for project 'ScrollingScreenshotTool.vcxproj'.  Please check to make sure that you have specified a valid combination of Configuration and Platform for this project.  Configuration='Debug'  Platform='x64'.  This error may also appear if some other project is trying to follow a project-to-project reference to this project, this project has been unloaded or is not included in the solution, and the referencing project does not build using the same or an equivalent Configuration or Platform.
                    Task "Error" skipped, due to false condition; ( '$(_InvalidConfigurationError)' == 'true' ) was evaluated as ( '' == 'true' ).
@@ -2233,9 +2233,9 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
                    Task "Error" skipped, due to false condition; ( '$(_InitialMSBuildProjectExtensionsPath)' != '' And '$(MSBuildProjectExtensionsPath)' != '$(_InitialMSBuildProjectExtensionsPath)' ) was evaluated as ( 'C:\Users\13816\Desktop\ScrollingScreenshotTool\obj\' != '' And 'C:\Users\13816\Desktop\ScrollingScreenshotTool\obj\' != 'C:\Users\13816\Desktop\ScrollingScreenshotTool\obj\' ).
                    Task "Warning" skipped, due to false condition; ( '$(EnableBaseIntermediateOutputPathMismatchWarning)' == 'true' And '$(_InitialBaseIntermediateOutputPath)' != '$(BaseIntermediateOutputPath)' And '$(BaseIntermediateOutputPath)' != '$(MSBuildProjectExtensionsPath)' ) was evaluated as ( '' == 'true' And 'obj\' != 'obj\' And 'obj\' != 'C:\Users\13816\Desktop\ScrollingScreenshotTool\obj\' ).
-01:06:12.204     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:2)
+09:17:41.338     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:2)
                    Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
-01:06:12.204     1>Target "SetTelemetryEnvironmentVariables: (TargetId:3)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.DesignTime.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
+09:17:41.338     1>Target "SetTelemetryEnvironmentVariables: (TargetId:3)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.DesignTime.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
                    Using "SetEnv" task from assembly "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Build.CppTasks.Common.dll".
                    Task "SetEnv" (TaskId:4)
                      任务参数:Prefix=False (TaskId:4)
@@ -2245,9 +2245,9 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Done executing task "SetEnv". (TaskId:4)
                    Task "SetEnv" (TaskId:5)
                      任务参数:Prefix=False (TaskId:5)
-                     任务参数:Value=1739099726 (TaskId:5)
+                     任务参数:Value=39194374 (TaskId:5)
                      任务参数:Name=VSTEL_CurrentSolutionBuildID (TaskId:5)
-                     VSTEL_CurrentSolutionBuildID=1739099726 (TaskId:5)
+                     VSTEL_CurrentSolutionBuildID=39194374 (TaskId:5)
                    Done executing task "SetEnv". (TaskId:5)
                    Task "SetEnv" (TaskId:6)
                      任务参数:Prefix=False (TaskId:6)
@@ -2256,8 +2256,8 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      VSTEL_ProjectID={14efe116-0116-4149-95ae-039bcd6e691d} (TaskId:6)
                      Output Property: VSTEL_ProjectID={14efe116-0116-4149-95ae-039bcd6e691d} (TaskId:6)
                    Done executing task "SetEnv". (TaskId:6)
-01:06:12.205     1>Done building target "SetTelemetryEnvironmentVariables" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:3)
-01:06:12.205     1>Target "_PrepareForBuild: (TargetId:4)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.BuildSteps.Targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
+09:17:41.338     1>Done building target "SetTelemetryEnvironmentVariables" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:3)
+09:17:41.338     1>Target "_PrepareForBuild: (TargetId:4)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.BuildSteps.Targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
                    Set Property: BuildType=Build
                    Set Property: _BuildActionType=Build
                    Task "CreateItem" skipped, due to false condition; ('%(CustomBuild.IncludeFileToTool)'!='') was evaluated as (''!='').
@@ -2265,18 +2265,18 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                        CustomBuildStep=
                            ScrollingScreenshotTool
                                    Message=Performing Custom Build Step
-01:06:12.205     1>Done building target "_PrepareForBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:4)
-01:06:12.205     1>Target "_PrepareForReferenceResolution: (TargetId:5)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
+09:17:41.338     1>Done building target "_PrepareForBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:4)
+09:17:41.338     1>Target "_PrepareForReferenceResolution: (TargetId:5)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
                    Task "VCMessage" skipped, due to false condition; ('$(WarnAboutIndividualManagedFiles)' == 'true') was evaluated as ('' == 'true').
                    Set Property: TargetFrameworkMoniker=
                    Set Property: _FindDependencies=false
                    Set Property: AdditionalExplicitAssemblyReferences=
                    Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
-01:06:12.205     1>Done building target "_PrepareForReferenceResolution" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:5)
+09:17:41.338     1>Done building target "_PrepareForReferenceResolution" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:5)
                    Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('ScrollingScreenshotTool.cpp'!='' and 'false'=='true' and '' != 'false').
-01:06:12.205     1>Target "BeforeResolveReferences: (TargetId:6)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
-01:06:12.205     1>Done building target "BeforeResolveReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:6)
-01:06:12.205     1>Target "AssignProjectConfiguration: (TargetId:7)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
+09:17:41.338     1>Target "BeforeResolveReferences: (TargetId:6)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
+09:17:41.338     1>Done building target "BeforeResolveReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:6)
+09:17:41.338     1>Target "AssignProjectConfiguration: (TargetId:7)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
                    Set Property: ShouldUnsetParentConfigurationAndPlatform=true
                    Using "AssignProjectConfiguration" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "AssignProjectConfiguration" (TaskId:7)
@@ -2291,14 +2291,14 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      任务参数:OnlyReferenceAndBuildProjectsEnabledInSolutionConfiguration=True (TaskId:7)
                      任务参数:CurrentProjectConfiguration=Debug (TaskId:7)
                    Done executing task "AssignProjectConfiguration". (TaskId:7)
-01:06:12.205     1>Done building target "AssignProjectConfiguration" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:7)
+09:17:41.338     1>Done building target "AssignProjectConfiguration" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:7)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
-01:06:12.205     1>Target "_SplitProjectReferencesByFileExistence: (TargetId:8)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareProjectReferences" depends on it):
+09:17:41.338     1>Target "_SplitProjectReferencesByFileExistence: (TargetId:8)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareProjectReferences" depends on it):
                    Task "ResolveNonMSBuildProjectOutput" skipped, due to false condition; ('$(BuildingInsideVisualStudio)'=='true' and '@(ProjectReferenceWithConfiguration)'!='') was evaluated as ('true'=='true' and ''!='').
-01:06:12.205     1>Done building target "_SplitProjectReferencesByFileExistence" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:8)
-01:06:12.205     1>Target "_AddOutputPathToGlobalPropertiesToRemove: (TargetId:9)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_GetProjectReferenceTargetFrameworkProperties" depends on it):
-01:06:12.205     1>Done building target "_AddOutputPathToGlobalPropertiesToRemove" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:9)
-01:06:12.205     1>Target "_GetProjectReferenceTargetFrameworkProperties: (TargetId:10)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareProjectReferences" depends on it):
+09:17:41.338     1>Done building target "_SplitProjectReferencesByFileExistence" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:8)
+09:17:41.338     1>Target "_AddOutputPathToGlobalPropertiesToRemove: (TargetId:9)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_GetProjectReferenceTargetFrameworkProperties" depends on it):
+09:17:41.338     1>Done building target "_AddOutputPathToGlobalPropertiesToRemove" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:9)
+09:17:41.338     1>Target "_GetProjectReferenceTargetFrameworkProperties: (TargetId:10)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareProjectReferences" depends on it):
                    Set Property: ReferringTargetFrameworkForProjectReferences=
                    Using "MSBuild" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "MSBuild" (TaskId:8)
@@ -2317,7 +2317,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Using "SetRidAgnosticValueForProjects" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "SetRidAgnosticValueForProjects" (TaskId:9)
                    Done executing task "SetRidAgnosticValueForProjects". (TaskId:9)
-01:06:12.206     1>Done building target "_GetProjectReferenceTargetFrameworkProperties" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:10)
+09:17:41.339     1>Done building target "_GetProjectReferenceTargetFrameworkProperties" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:10)
                    Target "_GetProjectReferencePlatformProperties" skipped, due to false condition; ('$(EnableDynamicPlatformResolution)' == 'true'
                                         and '$(CurrentSolutionConfigurationContents)' == ''
                                         and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true'
@@ -2325,25 +2325,25 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    <ProjectConfiguration Project="{14efe116-0116-4149-95ae-039bcd6e691d}" AbsolutePath="C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj">Debug|x64</ProjectConfiguration>
                    </SolutionConfiguration>' == ''
                                         and '' != '').
-01:06:12.206     1>Target "PrepareProjectReferences: (TargetId:11)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveProjectReferences" depends on it):
-01:06:12.206     1>Done building target "PrepareProjectReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:11)
+09:17:41.339     1>Target "PrepareProjectReferences: (TargetId:11)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveProjectReferences" depends on it):
+09:17:41.339     1>Done building target "PrepareProjectReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:11)
                    Target "_RemoveNameMetadataFromProjectReferenceItems" skipped, due to false condition; ('@(ProjectReference)'!='') was evaluated as (''!='').
-01:06:12.206     1>Target "ResolveProjectReferences: (TargetId:12)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
+09:17:41.339     1>Target "ResolveProjectReferences: (TargetId:12)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' != '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '17.0' != '10.0' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' != 'true' and 'true' == 'true' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingProject)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' == 'true' and '' != '').
                    Task "Warning" skipped, due to false condition; ('@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceNonexistent)' != '') was evaluated as ('' != '' and '' != '').
-01:06:12.206     1>Done building target "ResolveProjectReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:12)
+09:17:41.339     1>Done building target "ResolveProjectReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:12)
                    Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
                    Target "ResolveNativeReferences" skipped, due to false condition; ('@(NativeReference)'!='') was evaluated as (''!='').
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
                    Target "ResolveProjectReferences" skipped. Previously built successfully.
                    Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
-01:06:12.206     1>Target "GetFrameworkPaths: (TargetId:13)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
-01:06:12.206     1>Done building target "GetFrameworkPaths" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:13)
+09:17:41.339     1>Target "GetFrameworkPaths: (TargetId:13)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+09:17:41.339     1>Done building target "GetFrameworkPaths" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:13)
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
                    Target "GetFrameworkPaths" skipped. Previously built successfully.
-01:06:12.206     1>Target "GetReferenceAssemblyPaths: (TargetId:14)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+09:17:41.339     1>Target "GetReferenceAssemblyPaths: (TargetId:14)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Set Property: TargetFrameworkDirectory=
                    Task "GetReferenceAssemblyPaths" skipped, due to false condition; ('$(TargetFrameworkMoniker)' != '' and ('$(_TargetFrameworkDirectories)' == '' or '$(_FullFrameworkReferenceAssemblyPaths)' == '')) was evaluated as ('' != '' and ('' == '' or '' == '')).
                    Set Property: TargetFrameworkDirectory=;;
@@ -2351,8 +2351,8 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Set Property: RemoveAssemblyFoldersIfNoTargetFramework=true
                    Set Property: AssemblySearchPaths={CandidateAssemblyFiles};C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64;;{HintPathFromItem};{TargetFrameworkDirectory};{AssemblyFoldersFromConfig:C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\AssemblyFolders.config,};;{Registry:Software\Microsoft\,,AssemblyFoldersEx};;{GAC};{RawFileName};C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\
                    Set Property: TargetFrameworkProfile=
-01:06:12.206     1>Done building target "GetReferenceAssemblyPaths" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:14)
-01:06:12.206     1>Target "AddExternalIncludDirectoriesToPaths: (TargetId:15)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.Current.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "SetBuildDefaultEnvironmentVariables" depends on it):
+09:17:41.339     1>Done building target "GetReferenceAssemblyPaths" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:14)
+09:17:41.339     1>Target "AddExternalIncludDirectoriesToPaths: (TargetId:15)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.Current.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "SetBuildDefaultEnvironmentVariables" depends on it):
                    Added Item(s): 
                        _ExternalIncludePathToInclude=
                            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include
@@ -2397,8 +2397,8 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                            C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt
                            C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt
                            C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um
-01:06:12.206     1>Done building target "AddExternalIncludDirectoriesToPaths" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:15)
-01:06:12.206     1>Target "SetBuildDefaultEnvironmentVariables: (TargetId:16)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.Current.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
+09:17:41.339     1>Done building target "AddExternalIncludDirectoriesToPaths" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:15)
+09:17:41.339     1>Target "SetBuildDefaultEnvironmentVariables: (TargetId:16)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.Current.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
                    Task "SetEnv" (TaskId:10)
                      任务参数:Prefix=False (TaskId:10)
                      任务参数:Value=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319\;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\MATLAB\R2022b\runtime\win64;C:\Program Files\MATLAB\R2022b\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Users\13816\Documents\stable_diffusion;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Bandizip\;C:\Program Files\NCBI\blast-2.15.0+\bin;C:\Users\13816\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\13816\AppData\Local\Programs\Python\Python311\;C:\Users\13816\AppData\Local\Microsoft\WindowsApps;C:\Users\13816\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\13816\Documents\stable_diffusion;C:\Users\13816\AppData\Roaming\npm;C:\Users\13816\.dotnet\tools; (TaskId:10)
@@ -2434,15 +2434,15 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      EXTERNAL_INCLUDE=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um; (TaskId:14)
                      Output Property: EXTERNAL_INCLUDE=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include%3b%3bC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include%3b%3bC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include%3b%3bC:\Program Files %28x86%29\Windows Kits\10\Include\10.0.22000.0\ucrt%3b%3b%3bC:\Program Files %28x86%29\Windows Kits\10\Include\10.0.22000.0\um%3bC:\Program Files %28x86%29\Windows Kits\10\Include\10.0.22000.0\shared%3bC:\Program Files %28x86%29\Windows Kits\10\Include\10.0.22000.0\winrt%3bC:\Program Files %28x86%29\Windows Kits\10\Include\10.0.22000.0\cppwinrt%3bC:\Program Files %28x86%29\Windows Kits\NETFXSDK\4.8\Include\um%3b (TaskId:14)
                    Done executing task "SetEnv". (TaskId:14)
-01:06:12.206     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:16)
+09:17:41.339     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:16)
                    Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
-01:06:12.206     1>Target "GetResolvedWinMD: (TargetId:17)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
+09:17:41.340     1>Target "GetResolvedWinMD: (TargetId:17)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
                    Added Item(s): 
                        Link=
                            tmp
                                    AcceptableNonZeroExitCodes=
-                                   AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
+                                   AdditionalDependencies=Gdiplus.lib;Gdi32.lib;User32.lib;Ole32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
                                    AllowIsolation=true
                                    CLRImageType=Default
                                    DataExecutionPrevention=true
@@ -2485,7 +2485,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                        Link=
                            tmp
                                    AcceptableNonZeroExitCodes=
-                                   AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
+                                   AdditionalDependencies=Gdiplus.lib;Gdi32.lib;User32.lib;Ole32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
                                    AllowIsolation=true
                                    CLRImageType=Default
                                    DataExecutionPrevention=true
@@ -2524,8 +2524,8 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                                    TypeLibraryResourceID=1
                                    UACExecutionLevel=AsInvoker
                                    UACUIAccess=false
-01:06:12.206     1>Done building target "GetResolvedWinMD" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:17)
-01:06:12.206     1>Target "_CheckWindowsSDKInstalled: (TargetId:18)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.WindowsSDK.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
+09:17:41.340     1>Done building target "GetResolvedWinMD" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:17)
+09:17:41.340     1>Target "_CheckWindowsSDKInstalled: (TargetId:18)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Cpp.WindowsSDK.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
                    Set Property: WindowsSDKInstalled=false
                    Set Property: WindowsSDK_UAP_Support=false
                    Set Property: WindowsSDK_Desktop_Support=false
@@ -2534,11 +2534,11 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Set Property: WindowsSDK_Desktop_Support=true
                    Task "VCMessage" skipped, due to false condition; ('$(WindowsSDKInstalled)' != 'true') was evaluated as ('true' != 'true').
                    Task "VCMessage" skipped, due to false condition; ('$(WindowsAppContainer)' != 'true' and '$(WindowsSDK_Desktop_Support)' != true) was evaluated as ('false' != 'true' and 'true' != true).
-01:06:12.207     1>Done building target "_CheckWindowsSDKInstalled" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:18)
+09:17:41.340     1>Done building target "_CheckWindowsSDKInstalled" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:18)
                    Target "GetFrameworkPaths" skipped. Previously built successfully.
                    Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
                    Target "AssignLinkMetadata" skipped, due to false condition; ( '$(SynthesizeLinkMetadata)' == 'true' ) was evaluated as ( '' == 'true' ).
-01:06:12.207     1>Target "SetCABuildNativeEnvironmentVariables: (TargetId:19)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\v17.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
+09:17:41.340     1>Target "SetCABuildNativeEnvironmentVariables: (TargetId:19)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\v17.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareForBuild" depends on it):
                    Task "SetEnv" (TaskId:15)
                      任务参数:Prefix=False (TaskId:15)
                      任务参数:Value=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um; (TaskId:15)
@@ -2546,8 +2546,8 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      CAExcludePath=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um; (TaskId:15)
                    Done executing task "SetEnv". (TaskId:15)
                    Task "SetEnv" skipped, due to false condition; ('$(RunMsvcAnalysis)'=='true' and '$(VCCodeAnalysisUX)'=='true') was evaluated as ('false'=='true' and 'true'=='true').
-01:06:12.207     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:19)
-01:06:12.207     1>Target "PrepareForBuild: (TargetId:20)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+09:17:41.340     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:19)
+09:17:41.340     1>Target "PrepareForBuild: (TargetId:20)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Set Property: TargetDir=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\
                    Set Property: LocalDebuggerCommand=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe
                    Set Property: BuildProjectReferences=false
@@ -2572,7 +2572,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                        Link=
                            __Tempfile__
                                    AcceptableNonZeroExitCodes=
-                                   AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
+                                   AdditionalDependencies=Gdiplus.lib;Gdi32.lib;User32.lib;Ole32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
                                    AllowIsolation=true
                                    CLRImageType=Default
                                    DataExecutionPrevention=true
@@ -2615,7 +2615,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                        Link=
                            __Tempfile__
                                    AcceptableNonZeroExitCodes=
-                                   AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
+                                   AdditionalDependencies=Gdiplus.lib;Gdi32.lib;User32.lib;Ole32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
                                    AllowIsolation=true
                                    CLRImageType=Default
                                    DataExecutionPrevention=true
@@ -2687,19 +2687,19 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                              C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\
                              x64\Debug\Scrollin.14efe116.tlog\ (TaskId:18)
                    Done executing task "MakeDir". (TaskId:18)
-01:06:12.208     1>Done building target "PrepareForBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:20)
+09:17:41.341     1>Done building target "PrepareForBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:20)
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
                    Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('ScrollingScreenshotTool.cpp'!='' and 'false'=='true' and '' != 'false').
                    Target "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '') was evaluated as ('' != '').
-01:06:12.208     1>Target "ResolveSDKReferences: (TargetId:21)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+09:17:41.341     1>Target "ResolveSDKReferences: (TargetId:21)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "ResolveSDKReference" skipped, due to false condition; ('@(SDKReference)'!='') was evaluated as (''!='').
-01:06:12.208     1>Done building target "ResolveSDKReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:21)
+09:17:41.341     1>Done building target "ResolveSDKReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:21)
                    Target "ResolveSDKReferences" skipped. Previously built successfully.
-01:06:12.208     1>Target "ExpandSDKReferences: (TargetId:22)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+09:17:41.341     1>Target "ExpandSDKReferences: (TargetId:22)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "GetSDKReferenceFiles" skipped, due to false condition; ('@(ResolvedSDKReference)'!='') was evaluated as (''!='').
-01:06:12.208     1>Done building target "ExpandSDKReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:22)
+09:17:41.341     1>Done building target "ExpandSDKReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:22)
                    Target "ResolveNuGetPackageAssets" skipped, due to false condition; ('$(ResolveNuGetPackages)' == 'true' and exists('$(ProjectLockFile)')) was evaluated as ('true' == 'true' and exists('obj\project.assets.json')).
-01:06:12.208     1>Target "ResolveAssemblyReferences: (TargetId:23)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
+09:17:41.341     1>Target "ResolveAssemblyReferences: (TargetId:23)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
                    Added Item(s): _ReferenceInstalledAssemblyDirectory=C:\Program Files (x86)\Windows Kits\10\References
                    Set Property: ResolveAssemblyReferencesStateFile=x64\Debug\ScrollingScreenshotTool.vcxproj.AssemblyReference.cache
                    Set Property: ResolveAssemblyReferencesSilent=false
@@ -2710,18 +2710,18 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Set Property: ResolveAssemblyReferenceOutputUnresolvedAssemblyConflicts=false
                    Set Property: FindDependenciesOfExternallyResolvedReferences=false
                    Task "ResolveAssemblyReference" skipped, due to false condition; ('@(Reference)'!='' or '@(_ResolvedProjectReferencePaths)'!='' or '@(_ExplicitReference)' != '') was evaluated as (''!='' or ''!='' or '' != '').
-01:06:12.208     1>Done building target "ResolveAssemblyReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:23)
+09:17:41.342     1>Done building target "ResolveAssemblyReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:23)
                    Target "GenerateBindingRedirects" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true') was evaluated as ('' == 'true' and 'true' == 'true').
                    Target "GenerateBindingRedirectsUpdateAppConfig" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true' and Exists('$(_GenerateBindingRedirectsIntermediateAppConfig)')) was evaluated as ('' == 'true' and 'true' == 'true' and Exists('x64\Debug\ScrollingScreenshotTool.exe.config')).
                    Target "ResolveComReferences" skipped, due to false condition; ('@(COMReference)'!='' or '@(COMFileReference)'!='') was evaluated as (''!='' or ''!='').
-01:06:12.208     1>Target "AfterResolveReferences: (TargetId:24)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
-01:06:12.208     1>Done building target "AfterResolveReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:24)
+09:17:41.342     1>Target "AfterResolveReferences: (TargetId:24)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResolveReferences" depends on it):
+09:17:41.342     1>Done building target "AfterResolveReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:24)
                    Target "ResolveTestReferences" skipped, due to false condition; ('@(Shadow)'!='') was evaluated as (''!='').
-01:06:12.208     1>Target "ResolveReferences: (TargetId:25)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
-01:06:12.208     1>Done building target "ResolveReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:25)
+09:17:41.342     1>Target "ResolveReferences: (TargetId:25)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
+09:17:41.342     1>Done building target "ResolveReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:25)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "PrepareForBuild" skipped. Previously built successfully.
-01:06:12.208     1>Target "InitializeBuildStatus: (TargetId:26)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
+09:17:41.342     1>Target "InitializeBuildStatus: (TargetId:26)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
                    Using "ReadLinesFromFile" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "ReadLinesFromFile" (TaskId:19)
                      任务参数:File=x64\Debug\Scrollin.14efe116.tlog\ScrollingScreenshotTool.lastbuildstate (TaskId:19)
@@ -2749,33 +2749,33 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      Task Parameter:Files=x64\Debug\Scrollin.14efe116.tlog\unsuccessfulbuild (TaskId:21)
                      Touching "x64\Debug\Scrollin.14efe116.tlog\unsuccessfulbuild". (TaskId:21)
                    Done executing task "Touch". (TaskId:21)
-01:06:12.209     1>Done building target "InitializeBuildStatus" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:26)
+09:17:41.343     1>Done building target "InitializeBuildStatus" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:26)
                    Target "PrepareProjectReferences" skipped. Previously built successfully.
-01:06:12.209     1>Target "BuildGenerateSourcesTraverse: (TargetId:27)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildGenerateSources" depends on it):
+09:17:41.343     1>Target "BuildGenerateSourcesTraverse: (TargetId:27)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildGenerateSources" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != '' and '' == 'true').
-01:06:12.209     1>Done building target "BuildGenerateSourcesTraverse" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:27)
+09:17:41.343     1>Done building target "BuildGenerateSourcesTraverse" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:27)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-01:06:12.209     1>Target "BeforeBuildGenerateSources: (TargetId:28)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.BuildSteps.Targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-01:06:12.209     1>Done building target "BeforeBuildGenerateSources" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:28)
-01:06:12.209     1>Target "PreBuildEvent: (TargetId:29)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.343     1>Target "BeforeBuildGenerateSources: (TargetId:28)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.BuildSteps.Targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.343     1>Done building target "BeforeBuildGenerateSources" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:28)
+09:17:41.343     1>Target "PreBuildEvent: (TargetId:29)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
                    Task "Message" skipped, due to false condition; ('%(PreBuildEvent.Message)' != '' and '%(PreBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
                    Task "Exec" skipped, due to false condition; ('%(PreBuildEvent.Command)' != '') was evaluated as ('' != '').
-01:06:12.209     1>Done building target "PreBuildEvent" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:29)
+09:17:41.343     1>Done building target "PreBuildEvent" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:29)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "InitializeBuildStatus" skipped. Previously built successfully.
                    Target "SetBuildDefaultEnvironmentVariables" skipped. Previously built successfully.
                    Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
-01:06:12.209     1>Target "_SelectedFiles: (TargetId:30)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "SelectCustomBuild" depends on it):
-01:06:12.209     1>Done building target "_SelectedFiles" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:30)
-01:06:12.209     1>Target "SelectCustomBuild: (TargetId:31)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "CustomBuild" depends on it):
-01:06:12.209     1>Done building target "SelectCustomBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:31)
-01:06:12.209     1>Target "ComputeCustomBuildOutput: (TargetId:32)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "CustomBuild" depends on it):
+09:17:41.343     1>Target "_SelectedFiles: (TargetId:30)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "SelectCustomBuild" depends on it):
+09:17:41.343     1>Done building target "_SelectedFiles" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:30)
+09:17:41.343     1>Target "SelectCustomBuild: (TargetId:31)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "CustomBuild" depends on it):
+09:17:41.343     1>Done building target "SelectCustomBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:31)
+09:17:41.343     1>Target "ComputeCustomBuildOutput: (TargetId:32)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "CustomBuild" depends on it):
                    Task "CreateItem" skipped, due to false condition; ('%(CustomBuildOutputs.OutputItemType)'!='') was evaluated as (''!='').
                    Task "MakeDir" (TaskId:22)
                    Done executing task "MakeDir". (TaskId:22)
-01:06:12.209     1>Done building target "ComputeCustomBuildOutput" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:32)
-01:06:12.209     1>Target "CustomBuild: (TargetId:33)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.343     1>Done building target "ComputeCustomBuildOutput" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:32)
+09:17:41.343     1>Target "CustomBuild: (TargetId:33)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
                    Set Property: CustomBuildToolArchitecture=Native32Bit
                    Using "GetOutOfDateItems" task from assembly "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Build.CppTasks.Common.dll".
                    Task "GetOutOfDateItems" (TaskId:23)
@@ -2797,12 +2797,12 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Done executing task "GetOutOfDateItems". (TaskId:24)
                    Task "ParallelCustomBuild" skipped, due to false condition; ('@(_ParallelCustomBuild)' != '') was evaluated as ('' != '').
                    Task "CustomBuild" skipped, due to false condition; ('@(_CustomBuild)' != '') was evaluated as ('' != '').
-01:06:12.209     1>Done building target "CustomBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:33)
+09:17:41.343     1>Done building target "CustomBuild" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:33)
                    Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
                    Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
                    Target "_CreateCopyFileItems" skipped, due to false condition; ('@(CopyFileToFolders)' != '') was evaluated as ('' != '').
                    Target "_SelectedFiles" skipped. Previously built successfully.
-01:06:12.209     1>Target "CopyFileToFolders: (TargetId:34)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.343     1>Target "CopyFileToFolders: (TargetId:34)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
                    Task "GetOutOfDateItems" (TaskId:25)
                      任务参数:TLogNamePrefix=CopyFile (TaskId:25)
                      任务参数:TLogDirectory=x64\Debug\Scrollin.14efe116.tlog\ (TaskId:25)
@@ -2811,66 +2811,66 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      任务参数:TrackFileAccess=True (TaskId:25)
                    Done executing task "GetOutOfDateItems". (TaskId:25)
                    Task "Copy" skipped, due to false condition; ('@(_OutOfDateCopyFile)' != '') was evaluated as ('' != '').
-01:06:12.209     1>Done building target "CopyFileToFolders" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:34)
+09:17:41.343     1>Done building target "CopyFileToFolders" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:34)
                    Target "Xsd" skipped, due to false condition; ('@(Xsd)' != '') was evaluated as ('' != '').
-01:06:12.209     1>Target "_Xsd: (TargetId:35)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-01:06:12.209     1>Done building target "_Xsd" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:35)
-01:06:12.209     1>Target "MakeDirsForMidl: (TargetId:36)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Midl" depends on it):
+09:17:41.343     1>Target "_Xsd: (TargetId:35)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.343     1>Done building target "_Xsd" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:35)
+09:17:41.343     1>Target "MakeDirsForMidl: (TargetId:36)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Midl" depends on it):
                    Set Property: Midl_OutputDir=
                    Task "Makedir" (TaskId:26)
                    Done executing task "Makedir". (TaskId:26)
-01:06:12.209     1>Done building target "MakeDirsForMidl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:36)
+09:17:41.344     1>Done building target "MakeDirsForMidl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:36)
                    Target "Midl" skipped, due to false condition; ('@(Midl)' != '') was evaluated as ('' != '').
                    Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
                    Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
-01:06:12.209     1>Target "ComputeMIDLGeneratedCompileInputs: (TargetId:37)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Midl" depends on it):
+09:17:41.344     1>Target "ComputeMIDLGeneratedCompileInputs: (TargetId:37)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Midl" depends on it):
                    Set Property: Midl_OutputDir=
-01:06:12.209     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:37)
-01:06:12.209     1>Target "AfterMidl: (TargetId:38)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Midl" depends on it):
-01:06:12.209     1>Done building target "AfterMidl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:38)
-01:06:12.209     1>Target "_Midl: (TargetId:39)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-01:06:12.209     1>Done building target "_Midl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:39)
-01:06:12.209     1>Target "AfterBuildGenerateSources: (TargetId:40)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.BuildSteps.Targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-01:06:12.209     1>Done building target "AfterBuildGenerateSources" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:40)
-01:06:12.209     1>Target "AfterBuildGenerateSourcesEvent: (TargetId:41)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-01:06:12.209     1>Done building target "AfterBuildGenerateSourcesEvent" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:41)
-01:06:12.209     1>Target "_BuildGenerateSourcesAction: (TargetId:42)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildGenerateSources" depends on it):
-01:06:12.209     1>Done building target "_BuildGenerateSourcesAction" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:42)
-01:06:12.209     1>Target "BuildGenerateSources: (TargetId:43)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
-01:06:12.209     1>Done building target "BuildGenerateSources" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:43)
+09:17:41.344     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:37)
+09:17:41.344     1>Target "AfterMidl: (TargetId:38)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Midl" depends on it):
+09:17:41.344     1>Done building target "AfterMidl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:38)
+09:17:41.344     1>Target "_Midl: (TargetId:39)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.344     1>Done building target "_Midl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:39)
+09:17:41.344     1>Target "AfterBuildGenerateSources: (TargetId:40)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.BuildSteps.Targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.344     1>Done building target "AfterBuildGenerateSources" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:40)
+09:17:41.344     1>Target "AfterBuildGenerateSourcesEvent: (TargetId:41)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+09:17:41.344     1>Done building target "AfterBuildGenerateSourcesEvent" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:41)
+09:17:41.344     1>Target "_BuildGenerateSourcesAction: (TargetId:42)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildGenerateSources" depends on it):
+09:17:41.344     1>Done building target "_BuildGenerateSourcesAction" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:42)
+09:17:41.344     1>Target "BuildGenerateSources: (TargetId:43)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
+09:17:41.344     1>Done building target "BuildGenerateSources" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:43)
                    Target "PrepareProjectReferences" skipped. Previously built successfully.
-01:06:12.209     1>Target "BuildCompileTraverse: (TargetId:44)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildCompile" depends on it):
+09:17:41.344     1>Target "BuildCompileTraverse: (TargetId:44)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildCompile" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
-01:06:12.209     1>Done building target "BuildCompileTraverse" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:44)
+09:17:41.344     1>Done building target "BuildCompileTraverse" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:44)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-01:06:12.209     1>Target "BeforeClCompile: (TargetId:45)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
-01:06:12.209     1>Done building target "BeforeClCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:45)
+09:17:41.344     1>Target "BeforeClCompile: (TargetId:45)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.344     1>Done building target "BeforeClCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:45)
                    Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
-01:06:12.209     1>Target "ComputeCLInputPDBName: (TargetId:46)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
-01:06:12.209     1>Done building target "ComputeCLInputPDBName" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:46)
+09:17:41.344     1>Target "ComputeCLInputPDBName: (TargetId:46)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.344     1>Done building target "ComputeCLInputPDBName" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:46)
                    Target "ResolveReferences" skipped. Previously built successfully.
-01:06:12.209     1>Target "FindReferenceAssembliesForReferences: (TargetId:47)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ComputeReferenceCLInput" depends on it):
-01:06:12.209     1>Done building target "FindReferenceAssembliesForReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:47)
-01:06:12.209     1>Target "GetReferencedVCProjectsInfo: (TargetId:48)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ComputeReferenceCLInput" depends on it):
+09:17:41.344     1>Target "FindReferenceAssembliesForReferences: (TargetId:47)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ComputeReferenceCLInput" depends on it):
+09:17:41.344     1>Done building target "FindReferenceAssembliesForReferences" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:47)
+09:17:41.344     1>Target "GetReferencedVCProjectsInfo: (TargetId:48)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ComputeReferenceCLInput" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.Extension)' == '.vcxproj' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == '.vcxproj' and '' != '' and '' != '').
-01:06:12.209     1>Done building target "GetReferencedVCProjectsInfo" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:48)
-01:06:12.209     1>Target "ComputeReferenceCLInput: (TargetId:49)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.344     1>Done building target "GetReferencedVCProjectsInfo" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:48)
+09:17:41.344     1>Target "ComputeReferenceCLInput: (TargetId:49)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
                    Task "WriteLinesToFile" skipped, due to false condition; ('@(_ReferenceOutputsToCopyLocally)'!='' and '$(DesignTimeBuild)' != 'true' and '$(TrackFileAccess)' == 'true') was evaluated as (''!='' and '' != 'true' and 'true' == 'true').
                    Task "WriteLinesToFile" skipped, due to false condition; ('@(_ReferenceOutputsToCopyLocally)'!='' and '$(DesignTimeBuild)' != 'true' and '$(TrackFileAccess)' == 'true') was evaluated as (''!='' and '' != 'true' and 'true' == 'true').
                    Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
-01:06:12.209     1>Done building target "ComputeReferenceCLInput" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:49)
-01:06:12.211     1>Target "WarnCompileDuplicatedFilename: (TargetId:50)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.344     1>Done building target "ComputeReferenceCLInput" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:49)
+09:17:41.344     1>Target "WarnCompileDuplicatedFilename: (TargetId:50)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
                    Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'ScrollingScreenshotTool.cpp' != 'ScrollingScreenshotTool.cpp' and 'x64\Debug\' == 'x64\Debug\').
-01:06:12.211     1>Done building target "WarnCompileDuplicatedFilename" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:50)
-01:06:12.211     1>Target "ComputeStdModulesCompileInputs: (TargetId:51)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.344     1>Done building target "WarnCompileDuplicatedFilename" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:50)
+09:17:41.344     1>Target "ComputeStdModulesCompileInputs: (TargetId:51)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
                    Task "GetLibraryModuleSources" skipped, due to false condition; ('@(LibraryManifests)' != '') was evaluated as ('' != '').
-01:06:12.211     1>Done building target "ComputeStdModulesCompileInputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:51)
-01:06:12.211     1>Target "FixupCLCompileOptions: (TargetId:52)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.344     1>Done building target "ComputeStdModulesCompileInputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:51)
+09:17:41.344     1>Target "FixupCLCompileOptions: (TargetId:52)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
                    Set Property: _PCHForceSyncWrite=true
-01:06:12.211     1>Done building target "FixupCLCompileOptions" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:52)
-01:06:12.211     1>Target "MakeDirsForCl: (TargetId:53)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.345     1>Done building target "FixupCLCompileOptions" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:52)
+09:17:41.345     1>Target "MakeDirsForCl: (TargetId:53)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
                    Added Item(s): ClDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
                    Added Item(s): ClDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
                    Added Item(s): ClDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
@@ -2889,7 +2889,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                            C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
                            C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
                            C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-01:06:12.211     1>Done building target "MakeDirsForCl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:53)
+09:17:41.345     1>Done building target "MakeDirsForCl" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:53)
                    Target "_SelectedFiles" skipped. Previously built successfully.
                    Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
@@ -2900,11 +2900,11 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                    Target "FixupCLCompileOptions" skipped. Previously built successfully.
                    Target "SelectCustomBuild" skipped. Previously built successfully.
                    Target "SetModuleDependencies" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(EnableCppModules)' == 'true') was evaluated as ('' != 'true' and '' == 'true').
-01:06:12.211     1>Target "SelectClCompile: (TargetId:54)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ClCompile" depends on it):
-01:06:12.211     1>Done building target "SelectClCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:54)
+09:17:41.345     1>Target "SelectClCompile: (TargetId:54)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ClCompile" depends on it):
+09:17:41.345     1>Done building target "SelectClCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:54)
                    Target "SelectAnalysisManifest" skipped, due to false condition; ('$(RunMsvcAnalysis)'=='true' and '$(SelectedFiles)'!='') was evaluated as ('false'=='true' and ''!='').
                    Target "ManagedIncrementalBuildPreProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('ScrollingScreenshotTool.cpp' != '' and 'false' == 'True').
-01:06:12.211     1>Target "ClCompile: (TargetId:55)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
+09:17:41.345     1>Target "ClCompile: (TargetId:55)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
                    Set Property: CLToolArchitecture=Native64Bit
                    Task "Delete" skipped, due to false condition; ('%(ClCompile.DebugInformationFormat)' != '' and '%(ClCompile.DebugInformationFormat)' != 'None' and '%(ClCompile.DebugInformationFormat)' != 'OldStyle' and '%(ClCompile.ProgramDataBaseFileName)' != '' and !Exists(%(ClCompile.ProgramDataBaseFileName))) was evaluated as ('EditAndContinue' != '' and 'EditAndContinue' != 'None' and 'EditAndContinue' != 'OldStyle' and 'x64\Debug\vc143.pdb' != '' and !Exists(x64\Debug\vc143.pdb)).
                    Task "MultiToolTask" skipped, due to false condition; ('%(ClCompile.CompilerIteration)' == 'Modules') was evaluated as ('' == 'Modules').
@@ -2968,6 +2968,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      任务参数:ModuleDependenciesFile=x64\Debug\ (TaskId:28)
                      任务参数:BuildingInIde=True (TaskId:28)
                      任务参数:WholeProgramOptimization=False (TaskId:28)
+                     任务参数:AdditionalOptions=/EHsc /DUNICODE  (TaskId:28)
                      任务参数:ToolArchitecture=Native64Bit (TaskId:28)
                      任务参数:TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\ (TaskId:28)
                      任务参数:WarningLevel=Level3 (TaskId:28)
@@ -2989,6 +2990,7 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                          Sources=
                              ScrollingScreenshotTool.cpp
                                      AcceptableNonZeroExitCodes=
+                                     AdditionalOptions=/EHsc /DUNICODE 
                                      AnalyzeExternalRuleset=
                                      AssemblerListingLocation=
                                      AssemblerOutput=NoListing
@@ -3119,801 +3121,134 @@ Logging verbosity is set to: Diagnostic.01:06:12.204     1>Project "C:\Users\138
                      ScrollingScreenshotTool.cpp will be compiled because the tracking log is not available. (TaskId:28)
                      Write Tracking log not available, minimal rebuild will be disabled. (TaskId:28)
                      Environment Variables passed to tool: (TaskId:28)
-                       VS_UNICODE_OUTPUT=1552 (TaskId:28)
+                       VS_UNICODE_OUTPUT=1688 (TaskId:28)
                        TRACKER_CONSOLEPAGE=65001 (TaskId:28)
-                     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt ScrollingScreenshotTool.cpp (TaskId:28)
+                     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt /EHsc /DUNICODE ScrollingScreenshotTool.cpp (TaskId:28)
                      Tracking command: (TaskId:28)
-                     C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\Scrollin.14efe116.tlog /r C:\USERS\13816\DESKTOP\SCROLLINGSCREENSHOTTOOL\SCROLLINGSCREENSHOTTOOL.CPP /b MSBuildConsole_CancelEvent749a8f6cb4004448bf46aa612bf152a7  /c "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\CL.exe"  /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt ScrollingScreenshotTool.cpp (TaskId:28)
+                     C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\Scrollin.14efe116.tlog /r C:\USERS\13816\DESKTOP\SCROLLINGSCREENSHOTTOOL\SCROLLINGSCREENSHOTTOOL.CPP /b MSBuildConsole_CancelEventeb6f88987a744006910d5b991dd358ca  /c "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\CL.exe"  /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt /EHsc /DUNICODE ScrollingScreenshotTool.cpp (TaskId:28)
                      ScrollingScreenshotTool.cpp (TaskId:28)
-                   Done executing task "CL". (TaskId:28)
-01:06:12.735     1>Done building target "ClCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:55)
-                   Target "RunSelectedFileNativeCodeAnalysis" skipped, due to false condition; ('$(RunMsvcAnalysis)'=='true' and '$(SelectedFiles)'!='') was evaluated as ('false'=='true' and ''!='').
-                   Target "ManagedIncrementalBuildPostProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('ScrollingScreenshotTool.cpp' != '' and 'false' == 'True').
-                   Target "NoAnalysisToolEnabledWarning" skipped, due to false condition; ('$(RunCppAnalysis)'=='true' AND '$(EnableMicrosoftCodeAnalysis)'=='false' AND '$(EnableClangTidyCodeAnalysis)'=='false') was evaluated as ('false'=='true' AND 'true'=='false' AND 'false'=='false').
-                   Target "RunSelectedFileClangTidy" skipped, due to false condition; ('$(RunClangCppAnalysis)'=='true' AND '$(SelectedFiles)'!='') was evaluated as ('false'=='true' AND ''!='').
-                   Target "MicrosoftAnalysisIncompatiableWithClangCl" skipped, due to false condition; ('$(RunCppAnalysis)'=='true' AND '$(EnableMicrosoftCodeAnalysis)'=='true' AND '$(UseClangCl)'=='true') was evaluated as ('false'=='true' AND 'true'=='true' AND ''=='true').
-01:06:12.735     1>Target "AfterClCompile: (TargetId:56)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ClCompile" depends on it):
-01:06:12.735     1>Done building target "AfterClCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:56)
-01:06:12.735     1>Target "_ClCompile: (TargetId:57)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildCompileAction" depends on it):
-01:06:12.735     1>Done building target "_ClCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:57)
-                   Target "_ResGen" skipped, due to false condition; ('@(EmbeddedResource)'!='') was evaluated as (''!='').
-01:06:12.735     1>Target "BeforeResourceCompile: (TargetId:58)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ResourceCompile" depends on it):
-01:06:12.735     1>Done building target "BeforeResourceCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:58)
-01:06:12.735     1>Target "MakeDirsForResourceCompile: (TargetId:59)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ResourceCompile" depends on it):
-                   Added Item(s): RcDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                   Added Item(s): RcDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                   Task "MakeDir" (TaskId:29)
-                     Task Parameter:
-                         Directories=
-                             C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                             C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug (TaskId:29)
-                   Done executing task "MakeDir". (TaskId:29)
-                   Removed Item(s): 
-                       RcDirsToMake=
-                           C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                           C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-01:06:12.735     1>Done building target "MakeDirsForResourceCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:59)
-                   Target "_SelectedFiles" skipped. Previously built successfully.
-                   Target "SelectCustomBuild" skipped. Previously built successfully.
-01:06:12.735     1>Target "SelectResourceCompile: (TargetId:60)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ResourceCompile" depends on it):
-01:06:12.735     1>Done building target "SelectResourceCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:60)
-01:06:12.735     1>Target "ResourceCompile: (TargetId:61)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ResourceCompile" depends on it):
-                   Set Property: RCToolArchitecture=Native64Bit
-                   Using "RC" task from assembly "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Build.CppTasks.Common.dll".
-                   Task "RC" (TaskId:30)
-                     Task Parameter:
-                         ExcludedInputPaths=
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt
-                             C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x86\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\arm64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x86\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x86\1033
-                             C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64
-                             C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64
-                             C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86
-                             C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\tools
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ide
-                             C:\Program Files (x86)\HTML Help Workshop
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64
-                             C:\Windows\Microsoft.NET\Framework\v4.0.30319\
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64
-                             C:\Windows\Microsoft.NET\Framework64\v4.0.30319\
-                             C:\Windows\Microsoft.NET\Framework\v4.0.30319\
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin
-                             C:\Windows\Microsoft.NET\Framework\v4.0.30319\
-                             C:\Windows
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\lib\x64
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x64
-                             C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\ucrt\x64 (TaskId:30)
-                     任务参数:MinimalRebuildFromTracking=True (TaskId:30)
-                     任务参数:ToolArchitecture=Native64Bit (TaskId:30)
-                     任务参数:TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\ (TaskId:30)
-                     任务参数:Source=ScrollingScreenshotTool.rc (TaskId:30)
-                     Task Parameter:
-                         PreprocessorDefinitions=
-                             _UNICODE
-                             UNICODE (TaskId:30)
-                     任务参数:Culture=0x0409 (TaskId:30)
-                     任务参数:TrackFileAccess=True (TaskId:30)
-                     任务参数:SuppressStartupBanner=True (TaskId:30)
-                     任务参数:UseResponseFile=False (TaskId:30)
-                     任务参数:ResourceOutputFileName=x64\Debug\ScrollingScreenshotTool.res (TaskId:30)
-                     All source files are not up-to-date: missing command TLog "C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\Scrollin.14efe116.tlog\rc.command.1.tlog". (TaskId:30)
-                     Environment Variables passed to tool: (TaskId:30)
-                       TRACKER_CONSOLEPAGE=65001 (TaskId:30)
-                     C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"x64\Debug\ScrollingScreenshotTool.res" ScrollingScreenshotTool.rc  (TaskId:30)
-                     Tracking command: (TaskId:30)
-                     C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\Scrollin.14efe116.tlog /r C:\USERS\13816\DESKTOP\SCROLLINGSCREENSHOTTOOL\SCROLLINGSCREENSHOTTOOL.RC /b MSBuildConsole_CancelEventb81bb9a87d9c42978f2a6d31bb89698e  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64\rc.exe"  /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"x64\Debug\ScrollingScreenshotTool.res" ScrollingScreenshotTool.rc  (TaskId:30)
-                   Done executing task "RC". (TaskId:30)
-01:06:12.773     1>Done building target "ResourceCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:61)
-01:06:12.773     1>Target "AfterResourceCompile: (TargetId:62)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_ResourceCompile" depends on it):
-01:06:12.773     1>Done building target "AfterResourceCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:62)
-01:06:12.773     1>Target "_ResourceCompile: (TargetId:63)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildCompileAction" depends on it):
-01:06:12.773     1>Done building target "_ResourceCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:63)
-                   Target "_ImpLib" skipped, due to false condition; ('$(ImpLibCompiled)' == 'true') was evaluated as ('' == 'true').
-                   Target "_Lib" skipped, due to false condition; ('$(LibCompiled)' == 'true') was evaluated as ('' == 'true').
-01:06:12.773     1>Target "AfterBuildCompileEvent: (TargetId:64)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildCompileAction" depends on it):
-01:06:12.773     1>Done building target "AfterBuildCompileEvent" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:64)
-01:06:12.773     1>Target "_BuildCompileAction: (TargetId:65)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildCompile" depends on it):
-01:06:12.773     1>Done building target "_BuildCompileAction" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:65)
-01:06:12.773     1>Target "BuildCompile: (TargetId:66)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Build" depends on it):
-01:06:12.773     1>Done building target "BuildCompile" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:66)
-                   Target "PrepareProjectReferences" skipped. Previously built successfully.
-01:06:12.773     1>Target "BuildLinkTraverse: (TargetId:67)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "BuildLink" depends on it):
-                   Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
-01:06:12.773     1>Done building target "BuildLinkTraverse" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:67)
-                   Target "PrepareForBuild" skipped. Previously built successfully.
-                   Target "ResolveReferences" skipped. Previously built successfully.
-01:06:12.773     1>Target "ComputeLegacyManifestEmbedding: (TargetId:68)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_BuildLinkAction" depends on it):
-                   Added Item(s): 
-                       Manifest=
-                           temp
-                                   AcceptableNonZeroExitCodes=
-                                   EnableDPIAwareness=false
-                                   GenerateCatalogFiles=false
-                                   LinkCompiledInterface=false
-                                   MinimalRebuildFromTracking=true
-                                   OutputManifestFile=x64\Debug\ScrollingScreenshotTool.exe.embed.manifest
-                                   SuppressStartupBanner=true
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   UpdateFileHashes=false
-                                   VerboseOutput=true
-                                   _LocalVariable=true
-                   Task "VCMessage" skipped, due to false condition; ('$(RevertManifestEmbedding)' == 'true' and '$(_LegacyManifestEmbeddingDebug)' == 'true') was evaluated as ('' == 'true' and '' == 'true').
-                   Removed Item(s): 
-                       Manifest=
-                           temp
-                                   AcceptableNonZeroExitCodes=
-                                   EnableDPIAwareness=false
-                                   GenerateCatalogFiles=false
-                                   LinkCompiledInterface=false
-                                   MinimalRebuildFromTracking=true
-                                   OutputManifestFile=x64\Debug\ScrollingScreenshotTool.exe.embed.manifest
-                                   SuppressStartupBanner=true
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   UpdateFileHashes=false
-                                   VerboseOutput=true
-                                   _LocalVariable=true
-01:06:12.773     1>Done building target "ComputeLegacyManifestEmbedding" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:68)
-01:06:12.773     1>Target "BeforeLink: (TargetId:69)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-01:06:12.773     1>Done building target "BeforeLink" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:69)
-01:06:12.773     1>Target "ComputeRCOutputs: (TargetId:70)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ComputeRCGeneratedLinkInputs" depends on it):
-                   Added Item(s): 
-                       ResObj=
-                           x64\Debug\ScrollingScreenshotTool.res
-                                   AcceptableNonZeroExitCodes=
-                                   Culture=0x0409
-                                   ExcludedInputPaths=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x86\1033;;;;;;;;;;;;;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319\;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Windows;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\ucrt\x64;;
-                                   ImpLibCompiled=
-                                   LibCompiled=
-                                   LinkCompiled=true
-                                   MinimalRebuildFromTracking=true
-                                   PreprocessorDefinitions=_UNICODE;UNICODE;
-                                   ResourceOutputFileName=x64\Debug\%(Filename).res
-                                   SuppressStartupBanner=true
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   UseResponseFile=false
-01:06:12.773     1>Done building target "ComputeRCOutputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:70)
-01:06:12.773     1>Target "ComputeRCGeneratedLinkInputs: (TargetId:71)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-                   Added Item(s): 
-                       Link=
-                           x64\Debug\ScrollingScreenshotTool.res
-                                   AcceptableNonZeroExitCodes=
-                                   AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
-                                   AllowIsolation=true
-                                   CLRImageType=Default
-                                   DataExecutionPrevention=true
-                                   DelaySign=
-                                   Driver=NotSet
-                                   EnableUAC=true
-                                   GenerateDebugInformation=true
-                                   GenerateMapFile=false
-                                   IgnoreEmbeddedIDL=false
-                                   ImportLibrary=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib
-                                   IncrementalLinkDatabaseFile=x64\Debug\ScrollingScreenshotTool.ilk
-                                   KeyFile=
-                                   LinkErrorReporting=PromptImmediately
-                                   LinkTimeCodeGenerationObjectFile=x64\Debug\ScrollingScreenshotTool.iobj
-                                   ManifestFile=x64\Debug\ScrollingScreenshotTool.exe.intermediate.manifest
-                                   MapExports=false
-                                   MinimalRebuildFromTracking=true
-                                   NoEntryPoint=false
-                                   OutputFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe
-                                   PerUserRedirection=false
-                                   Profile=false
-                                   ProfileGuidedDatabase=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pgd
-                                   ProgramDatabaseFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pdb
-                                   RandomizedBaseAddress=true
-                                   RegisterOutput=false
-                                   SetChecksum=false
-                                   ShowProgress=NotSet
-                                   SubSystem=Windows
-                                   SuppressStartupBanner=true
-                                   SwapRunFromCD=false
-                                   SwapRunFromNET=false
-                                   TargetMachine=MachineX64
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   TurnOffAssemblyGeneration=false
-                                   TypeLibraryResourceID=1
-                                   UACExecutionLevel=AsInvoker
-                                   UACUIAccess=false
-01:06:12.773     1>Done building target "ComputeRCGeneratedLinkInputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:71)
-01:06:12.773     1>Target "ComputeManifestGeneratedLinkerInputs: (TargetId:72)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-01:06:12.773     1>Done building target "ComputeManifestGeneratedLinkerInputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:72)
-                   Target "ComputeCustomBuildOutput" skipped. Previously built successfully.
-                   Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
-                   Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
-                   Target "ComputeCLInputPDBName" skipped. Previously built successfully.
-                   Target "ComputeReferenceCLInput" skipped. Previously built successfully.
-                   Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
-                   Target "ComputeStdModulesCompileInputs" skipped. Previously built successfully.
-                   Target "FixupCLCompileOptions" skipped. Previously built successfully.
-01:06:12.774     1>Target "ComputeCLOutputs: (TargetId:73)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "ComputeCLGeneratedLinkInputs" depends on it):
-                   Added Item(s): 
-                       Obj=
-                           x64\Debug\ScrollingScreenshotTool.obj
-                                   AcceptableNonZeroExitCodes=
-                                   AnalyzeExternalRuleset=
-                                   AssemblerListingLocation=
-                                   AssemblerOutput=NoListing
-                                   BasicRuntimeChecks=EnableFastChecks
-                                   BrowseInformation=false
-                                   BrowseInformationFile=x64\Debug\
-                                   BufferSecurityCheck=true
-                                   BuildingInIDE=true
-                                   BuildStlModules=true
-                                   CallingConvention=Cdecl
-                                   CompileAs=CompileAsCpp
-                                   ConformanceMode=true
-                                   DebugInformationFormat=EditAndContinue
-                                   DeleteOutputBeforeExecute=true
-                                   DiagnosticsFormat=Column
-                                   DisableAnalyzeExternal=
-                                   DisableLanguageExtensions=false
-                                   EnableASAN=false
-                                   EnableEnhancedInstructionSet=NotSet
-                                   EnableFiberSafeOptimizations=false
-                                   EnableFuzzer=false
-                                   ErrorReporting=Prompt
-                                   ExceptionHandling=Sync
-                                   ExcludedInputPaths=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x86\1033;;;;;;;;;;;;;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319\;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Windows;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\ucrt\x64;;
-                                   ExpandAttributedSource=false
-                                   ExternalWarningLevel=Level3
-                                   FavorSizeOrSpeed=Neither
-                                   FloatingPointModel=Precise
-                                   ForceConformanceInForLoopScope=true
-                                   ForcedIncludeFiles=
-                                   ForcedUsingFiles=
-                                   GenerateModuleDependencies=false
-                                   GenerateSourceDependencies=false
-                                   GenerateXMLDocumentationFiles=false
-                                   IgnoreStandardIncludePath=false
-                                   ImpLibCompiled=
-                                   InlineFunctionExpansion=Default
-                                   IntelJCCErratum=false
-                                   IntrinsicFunctions=false
-                                   LanguageStandard=Default
-                                   LanguageStandard_C=Default
-                                   LibCompiled=
-                                   LinkCompiled=true
-                                   MinimalRebuild=false
-                                   MinimalRebuildFromTracking=true
-                                   ModuleDependenciesFile=x64\Debug\
-                                   ModuleOutputFile=
-                                   ObjectFileName=x64\Debug\
-                                   OmitDefaultLibName=false
-                                   Optimization=Disabled
-                                   PrecompiledHeader=NotUsing
-                                   PrecompiledHeaderFile=
-                                   PrecompiledHeaderOutputFile=
-                                   PreprocessKeepComments=false
-                                   PreprocessorDefinitions=_DEBUG;_WINDOWS;_UNICODE;UNICODE;
-                                   PreprocessSuppressLineNumbers=false
-                                   PreprocessToFile=false
-                                   ProgramDataBaseFileName=x64\Debug\vc143.pdb
-                                   RemoveUnreferencedCodeData=true
-                                   RuntimeLibrary=MultiThreadedDebugDll
-                                   ScanSourceForModuleDependencies=false
-                                   SDLCheck=true
-                                   ShowIncludes=false
-                                   SmallerTypeCheck=false
-                                   SourceDependenciesFile=x64\Debug\
-                                   SpectreMitigation=false
-                                   StructMemberAlignment=Default
-                                   SupportJustMyCode=true
-                                   SuppressStartupBanner=true
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   TranslateIncludes=false
-                                   TreatAngleIncludeAsExternal=false
-                                   TreatExternalTemplatesAsInternal=true
-                                   TreatWarningAsError=false
-                                   TreatWChar_tAsBuiltInType=true
-                                   UndefineAllPreprocessorDefinitions=false
-                                   UseFullPaths=true
-                                   UseUnicodeForAssemblerListing=
-                                   WarningLevel=Level3
-                                   WholeProgramOptimization=false
-                                   WinRTNoStdLib=false
-                                   XMLDocumentationFileName=x64\Debug\
-01:06:12.774     1>Done building target "ComputeCLOutputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:73)
-01:06:12.774     1>Target "ComputeCLGeneratedLinkInputs: (TargetId:74)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-                   Added Item(s): 
-                       Link=
-                           x64\Debug\ScrollingScreenshotTool.obj
-                                   AcceptableNonZeroExitCodes=
-                                   AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
-                                   AllowIsolation=true
-                                   CLRImageType=Default
-                                   DataExecutionPrevention=true
-                                   DelaySign=
-                                   Driver=NotSet
-                                   EnableUAC=true
-                                   GenerateDebugInformation=true
-                                   GenerateMapFile=false
-                                   IgnoreEmbeddedIDL=false
-                                   ImportLibrary=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib
-                                   IncrementalLinkDatabaseFile=x64\Debug\ScrollingScreenshotTool.ilk
-                                   KeyFile=
-                                   LinkErrorReporting=PromptImmediately
-                                   LinkTimeCodeGenerationObjectFile=x64\Debug\ScrollingScreenshotTool.iobj
-                                   ManifestFile=x64\Debug\ScrollingScreenshotTool.exe.intermediate.manifest
-                                   MapExports=false
-                                   MinimalRebuildFromTracking=true
-                                   NoEntryPoint=false
-                                   OutputFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe
-                                   PerUserRedirection=false
-                                   Profile=false
-                                   ProfileGuidedDatabase=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pgd
-                                   ProgramDatabaseFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pdb
-                                   RandomizedBaseAddress=true
-                                   RegisterOutput=false
-                                   SetChecksum=false
-                                   ShowProgress=NotSet
-                                   SubSystem=Windows
-                                   SuppressStartupBanner=true
-                                   SwapRunFromCD=false
-                                   SwapRunFromNET=false
-                                   TargetMachine=MachineX64
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   TurnOffAssemblyGeneration=false
-                                   TypeLibraryResourceID=1
-                                   UACExecutionLevel=AsInvoker
-                                   UACUIAccess=false
-01:06:12.774     1>Done building target "ComputeCLGeneratedLinkInputs" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:74)
-01:06:12.774     1>Target "ComputeLinkInputsFromProject: (TargetId:75)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-01:06:12.774     1>Done building target "ComputeLinkInputsFromProject" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:75)
-                   Target "ComputeReferenceLinkInputs" skipped, due to false condition; (@(ProjectReference) != '') was evaluated as ( != '').
-01:06:12.774     1>Target "ComputeManifestInputsTargets: (TargetId:76)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-                   Added Item(s): 
-                       Manifest=
-                           temp
-                                   AcceptableNonZeroExitCodes=
-                                   EnableDPIAwareness=false
-                                   GenerateCatalogFiles=false
-                                   LinkCompiledInterface=false
-                                   MinimalRebuildFromTracking=true
-                                   OutputManifestFile=x64\Debug\ScrollingScreenshotTool.exe.embed.manifest
-                                   SuppressStartupBanner=true
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   UpdateFileHashes=false
-                                   VerboseOutput=true
-                                   _LocalVariable=true
-                   Set Property: _ManifestToIgnore=x64\Debug\ScrollingScreenshotTool.exe.intermediate.manifest
-                   Set Property: VCManifestDir=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\Include\Manifest\
-                   Removed Item(s): 
-                       Manifest=
-                           temp
-                                   AcceptableNonZeroExitCodes=
-                                   EnableDPIAwareness=false
-                                   GenerateCatalogFiles=false
-                                   LinkCompiledInterface=false
-                                   MinimalRebuildFromTracking=true
-                                   OutputManifestFile=x64\Debug\ScrollingScreenshotTool.exe.embed.manifest
-                                   SuppressStartupBanner=true
-                                   TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                   UpdateFileHashes=false
-                                   VerboseOutput=true
-                                   _LocalVariable=true
-01:06:12.774     1>Done building target "ComputeManifestInputsTargets" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:76)
-                   Target "ManifestResourceCompile" skipped, due to false condition; ('$(EmbedManifestBy)' == 'LINK' and '@(Manifest)' != '') was evaluated as ('LINK' == 'LINK' and '' != '').
-01:06:12.774     1>Target "AssignTargetPaths: (TargetId:77)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareResourceNames" depends on it):
-                   Using "AssignTargetPath" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-                   Task "AssignTargetPath" (TaskId:31)
-                     任务参数:RootFolder=C:\Users\13816\Desktop\ScrollingScreenshotTool (TaskId:31)
-                   Done executing task "AssignTargetPath". (TaskId:31)
-                   Task "AssignTargetPath" (TaskId:32)
-                     任务参数:RootFolder=C:\Users\13816\Desktop\ScrollingScreenshotTool (TaskId:32)
-                   Done executing task "AssignTargetPath". (TaskId:32)
-                   Task "AssignTargetPath" (TaskId:33)
-                     任务参数:RootFolder=C:\Users\13816\Desktop\ScrollingScreenshotTool (TaskId:33)
-                   Done executing task "AssignTargetPath". (TaskId:33)
-                   Task "AssignTargetPath" (TaskId:34)
-                     任务参数:RootFolder=C:\Users\13816\Desktop\ScrollingScreenshotTool (TaskId:34)
-                   Done executing task "AssignTargetPath". (TaskId:34)
-                   Task "AssignTargetPath" skipped, due to false condition; ('@(_DeploymentBaseManifestWithTargetPath)'=='' and '%(None.Extension)'=='.manifest') was evaluated as (''=='' and ''=='.manifest').
-01:06:12.774     1>Done building target "AssignTargetPaths" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:77)
-                   Target "AssignTargetPaths" skipped. Previously built successfully.
-01:06:12.774     1>Target "SplitResourcesByCulture: (TargetId:78)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareResourceNames" depends on it):
-                   Task "Warning" skipped, due to false condition; ('@(ResxWithNoCulture)'!='') was evaluated as (''!='').
-                   Task "Warning" skipped, due to false condition; ('@(ResxWithCulture)'!='') was evaluated as (''!='').
-                   Task "Warning" skipped, due to false condition; ('@(NonResxWithCulture)'!='') was evaluated as (''!='').
-                   Task "Warning" skipped, due to false condition; ('@(NonResxWithNoCulture)'!='') was evaluated as (''!='').
-                   Using "AssignCulture" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-                   Task "AssignCulture" (TaskId:35)
-                   Done executing task "AssignCulture". (TaskId:35)
-01:06:12.775     1>Done building target "SplitResourcesByCulture" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:78)
-                   Target "CreateManifestResourceNames" skipped, due to false condition; ('@(EmbeddedResource)' != '') was evaluated as ('' != '').
-01:06:12.775     1>Target "CreateCustomManifestResourceNames: (TargetId:79)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "PrepareResourceNames" depends on it):
-01:06:12.775     1>Done building target "CreateCustomManifestResourceNames" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:79)
-01:06:12.775     1>Target "PrepareResourceNames: (TargetId:80)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-01:06:12.775     1>Done building target "PrepareResourceNames" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:80)
-01:06:12.775     1>Target "MakeDirsForLink: (TargetId:81)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-                   Set Property: _LinkImportLibrary=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib
-                   Added Item(s): _LinkImportLibraryFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib
-                   Added Item(s): LinkDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                   Added Item(s): LinkDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                   Added Item(s): LinkDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                   Added Item(s): LinkDirsToMake=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\
-                   Task "MakeDir" (TaskId:36)
-                     Task Parameter:
-                         Directories=
-                             C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                             C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                             C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                             C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ (TaskId:36)
-                   Done executing task "MakeDir". (TaskId:36)
-                   Removed Item(s): 
-                       LinkDirsToMake=
-                           C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                           C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                           C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug
-                           C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\
-                   Removed Item(s): _LinkImportLibraryFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib
-01:06:12.775     1>Done building target "MakeDirsForLink" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:81)
-01:06:12.775     1>Target "DoLinkOutputFilesMatch: (TargetId:82)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-                   Added Item(s): _OutputFileFromLink=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe
-                   Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' == '') was evaluated as ('C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe' == '').
-                   Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.FullPath)' != '$([System.IO.Path]::GetFullPath($(TargetPath)))') was evaluated as ('C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe' != '' and 'C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe' != 'C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe').
-                   Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Extension)' != '' and '%(_OutputFileFromLink.Extension)' != '$(TargetExt)') was evaluated as ('C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe' != '' and '.exe' != '' and '.exe' != '.exe').
-                   Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Filename)' != '' and '%(_OutputFileFromLink.Filename)' != '$(TargetName)') was evaluated as ('C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe' != '' and 'ScrollingScreenshotTool' != '' and 'ScrollingScreenshotTool' != 'ScrollingScreenshotTool').
-                   Task "VCMessage" skipped, due to false condition; ('%(Link.MinimumRequiredVersion)' != '' and ('%(Link.Subsystem)' == '' or '%(Link.Subsystem)' == 'NotSet')) was evaluated as ('' != '' and ('Windows' == '' or 'Windows' == 'NotSet')).
-01:06:12.775     1>Done building target "DoLinkOutputFilesMatch" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:82)
-01:06:12.775     1>Target "PreLinkEvent: (TargetId:83)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-                   Task "Message" skipped, due to false condition; ('%(PreLinkEvent.Message)' != '' and '%(PreLinkEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
-                   Task "Exec" skipped, due to false condition; ('%(PreLinkEvent.Command)' != '') was evaluated as ('' != '').
-01:06:12.775     1>Done building target "PreLinkEvent" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:83)
-01:06:12.775     1>Target "ComputeLinkSwitches: (TargetId:84)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "Link" depends on it):
-                   Set Property: Link_MinimalRebuildFromTracking=true
-                   Set Property: LinkToolArchitecture=Native64Bit
-                   Set Property: _GenerateWindowsMetadata=
-01:06:12.775     1>Done building target "ComputeLinkSwitches" in project "ScrollingScreenshotTool.vcxproj".: (TargetId:84)
-01:06:12.775     1>Target "Link: (TargetId:85)" in file "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets" from project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (target "_Link" depends on it):
-                   Using "Link" task from assembly "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.Build.CppTasks.Common.dll".
-                   Task "Link" (TaskId:37)
-                     任务参数:OutputFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe (TaskId:37)
-                     任务参数:SwapRunFromCD=False (TaskId:37)
-                     任务参数:GenerateManifest=True (TaskId:37)
-                     任务参数:Profile=False (TaskId:37)
-                     任务参数:NoEntryPoint=False (TaskId:37)
-                     任务参数:DataExecutionPrevention=True (TaskId:37)
-                     任务参数:Driver=NotSet (TaskId:37)
-                     任务参数:ProgramDatabaseFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pdb (TaskId:37)
-                     任务参数:TurnOffAssemblyGeneration=False (TaskId:37)
-                     Task Parameter:
-                         ExcludedInputPaths=
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt
-                             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt
-                             C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x86\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\arm64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x86\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\1033
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x86\1033
-                             C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64
-                             C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64
-                             C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86
-                             C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\tools
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ide
-                             C:\Program Files (x86)\HTML Help Workshop
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64
-                             C:\Windows\Microsoft.NET\Framework\v4.0.30319\
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64
-                             C:\Windows\Microsoft.NET\Framework64\v4.0.30319\
-                             C:\Windows\Microsoft.NET\Framework\v4.0.30319\
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin
-                             C:\Windows\Microsoft.NET\Framework\v4.0.30319\
-                             C:\Windows
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\lib\x64
-                             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x64
-                             C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\ucrt\x64 (TaskId:37)
-                     任务参数:RandomizedBaseAddress=True (TaskId:37)
-                     任务参数:MapExports=False (TaskId:37)
-                     Task Parameter:
-                         AdditionalDependencies=
-                             kernel32.lib
-                             user32.lib
-                             gdi32.lib
-                             winspool.lib
-                             comdlg32.lib
-                             advapi32.lib
-                             shell32.lib
-                             ole32.lib
-                             oleaut32.lib
-                             uuid.lib
-                             odbc32.lib
-                             odbccp32.lib (TaskId:37)
-                     任务参数:AllowIsolation=True (TaskId:37)
-                     任务参数:SetChecksum=False (TaskId:37)
-                     任务参数:MinimalRebuildFromTracking=True (TaskId:37)
-                     任务参数:BuildingInIde=True (TaskId:37)
-                     任务参数:ToolArchitecture=Native64Bit (TaskId:37)
-                     任务参数:TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\ (TaskId:37)
-                     任务参数:ImportLibrary=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib (TaskId:37)
-                     任务参数:GenerateDebugInformation=true (TaskId:37)
-                     任务参数:TargetMachine=MachineX64 (TaskId:37)
-                     Task Parameter:
-                         Sources=
-                             x64\Debug\ScrollingScreenshotTool.res
-                                     AcceptableNonZeroExitCodes=
-                                     AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
-                                     AllowIsolation=true
-                                     CLRImageType=Default
-                                     DataExecutionPrevention=true
-                                     DelaySign=
-                                     Driver=NotSet
-                                     EnableUAC=true
-                                     ExcludedInputPaths=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x86\1033;;;;;;;;;;;;;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319\;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Windows;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\ucrt\x64;;
-                                     GenerateDebugInformation=true
-                                     GenerateMapFile=false
-                                     IgnoreEmbeddedIDL=false
-                                     ImportLibrary=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib
-                                     IncrementalLinkDatabaseFile=x64\Debug\ScrollingScreenshotTool.ilk
-                                     KeyFile=
-                                     LinkErrorReporting=PromptImmediately
-                                     LinkTimeCodeGenerationObjectFile=x64\Debug\ScrollingScreenshotTool.iobj
-                                     ManifestEmbed=true
-                                     ManifestFile=
-                                     ManifestInput=;;;
-                                     MapExports=false
-                                     MinimalRebuildFromTracking=true
-                                     NoEntryPoint=false
-                                     OutputFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe
-                                     PerUserRedirection=false
-                                     Profile=false
-                                     ProfileGuidedDatabase=
-                                     ProgramDatabaseFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pdb
-                                     RandomizedBaseAddress=true
-                                     RegisterOutput=false
-                                     SetChecksum=false
-                                     ShowProgress=NotSet
-                                     SubSystem=Windows
-                                     SuppressStartupBanner=true
-                                     SwapRunFromCD=false
-                                     SwapRunFromNET=false
-                                     TargetMachine=MachineX64
-                                     TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                     TurnOffAssemblyGeneration=false
-                                     TypeLibraryResourceID=1
-                                     UACExecutionLevel=AsInvoker
-                                     UACUIAccess=false
-                                     WindowsMetadataFile=
-                                     WindowsMetadataKeyContainer=
-                                     WindowsMetadataLinkDelaySign=
-                                     WindowsMetadataLinkKeyFile=
-                                     WindowsMetadataSignHash=
-                             x64\Debug\ScrollingScreenshotTool.obj
-                                     AcceptableNonZeroExitCodes=
-                                     AdditionalDependencies=kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;
-                                     AllowIsolation=true
-                                     CLRImageType=Default
-                                     DataExecutionPrevention=true
-                                     DelaySign=
-                                     Driver=NotSet
-                                     EnableUAC=true
-                                     ExcludedInputPaths=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\include;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostArm64\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX86\x86\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\arm\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\1033;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x86\1033;;;;;;;;;;;;;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\tools;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319\;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;C:\Windows;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\atlmfc\lib\x64;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\ucrt\x64;;
-                                     GenerateDebugInformation=true
-                                     GenerateMapFile=false
-                                     IgnoreEmbeddedIDL=false
-                                     ImportLibrary=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib
-                                     IncrementalLinkDatabaseFile=x64\Debug\ScrollingScreenshotTool.ilk
-                                     KeyFile=
-                                     LinkErrorReporting=PromptImmediately
-                                     LinkTimeCodeGenerationObjectFile=x64\Debug\ScrollingScreenshotTool.iobj
-                                     ManifestEmbed=true
-                                     ManifestFile=
-                                     ManifestInput=;;;
-                                     MapExports=false
-                                     MinimalRebuildFromTracking=true
-                                     NoEntryPoint=false
-                                     OutputFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe
-                                     PerUserRedirection=false
-                                     Profile=false
-                                     ProfileGuidedDatabase=
-                                     ProgramDatabaseFile=C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pdb
-                                     RandomizedBaseAddress=true
-                                     RegisterOutput=false
-                                     SetChecksum=false
-                                     ShowProgress=NotSet
-                                     SubSystem=Windows
-                                     SuppressStartupBanner=true
-                                     SwapRunFromCD=false
-                                     SwapRunFromNET=false
-                                     TargetMachine=MachineX64
-                                     TrackerLogDirectory=x64\Debug\Scrollin.14efe116.tlog\
-                                     TurnOffAssemblyGeneration=false
-                                     TypeLibraryResourceID=1
-                                     UACExecutionLevel=AsInvoker
-                                     UACUIAccess=false
-                                     WindowsMetadataFile=
-                                     WindowsMetadataKeyContainer=
-                                     WindowsMetadataLinkDelaySign=
-                                     WindowsMetadataLinkKeyFile=
-                                     WindowsMetadataSignHash= (TaskId:37)
-                     任务参数:SwapRunFromNET=False (TaskId:37)
-                     任务参数:CLRImageType=Default (TaskId:37)
-                     任务参数:LinkIncremental=True (TaskId:37)
-                     任务参数:UACExecutionLevel=AsInvoker (TaskId:37)
-                     任务参数:SubSystem=Windows (TaskId:37)
-                     任务参数:EnableUAC=True (TaskId:37)
-                     任务参数:LinkTimeCodeGenerationObjectFile=x64\Debug\ScrollingScreenshotTool.iobj (TaskId:37)
-                     任务参数:GenerateMapFile=False (TaskId:37)
-                     任务参数:LinkErrorReporting=PromptImmediately (TaskId:37)
-                     任务参数:TrackFileAccess=True (TaskId:37)
-                     任务参数:IncrementalLinkDatabaseFile=x64\Debug\ScrollingScreenshotTool.ilk (TaskId:37)
-                     任务参数:SuppressStartupBanner=True (TaskId:37)
-                     任务参数:ShowProgress=NotSet (TaskId:37)
-                     任务参数:UACUIAccess=False (TaskId:37)
-                     任务参数:ManifestEmbed=True (TaskId:37)
-                     任务参数:IgnoreEmbeddedIDL=False (TaskId:37)
-                     任务参数:TypeLibraryResourceID=1 (TaskId:37)
-                     Environment Variables passed to tool: (TaskId:37)
-                       VS_UNICODE_OUTPUT=1552 (TaskId:37)
-                       TRACKER_CONSOLEPAGE=65001 (TaskId:37)
-                     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe" /INCREMENTAL /ILK:"x64\Debug\ScrollingScreenshotTool.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib" /MACHINE:X64 x64\Debug\ScrollingScreenshotTool.res
-                     x64\Debug\ScrollingScreenshotTool.obj (TaskId:37)
-                     Tracking command: (TaskId:37)
-                     C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\Scrollin.14efe116.tlog /r "C:\USERS\13816\DESKTOP\SCROLLINGSCREENSHOTTOOL\X64\DEBUG\SCROLLINGSCREENSHOTTOOL.OBJ|C:\USERS\13816\DESKTOP\SCROLLINGSCREENSHOTTOOL\X64\DEBUG\SCROLLINGSCREENSHOTTOOL.RES" /b MSBuildConsole_CancelEvent0a1a828a32dc4fb6b2d64dd30a74fccb  /c "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe" /INCREMENTAL /ILK:"x64\Debug\ScrollingScreenshotTool.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.lib" /MACHINE:X64 x64\Debug\ScrollingScreenshotTool.res
-                     x64\Debug\ScrollingScreenshotTool.obj (TaskId:37)
-01:06:12.859     1>MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-01:06:12.859     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe : fatal error LNK1120: 1 unresolved externals
-                     The command exited with code 1120. (TaskId:37)
-                     Output Property: LinkSkippedExecution=False (TaskId:37)
-                   Done executing task "Link" -- FAILED. (TaskId:37)
-01:06:12.864     1>Done building target "Link" in project "ScrollingScreenshotTool.vcxproj" -- FAILED.: (TargetId:85)
-01:06:12.864     1>Done Building Project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (Build target(s)) -- FAILED.
+09:17:41.763     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(74,9): error C2664: 'HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)': cannot convert argument 2 from 'const char [7]' to 'LPCWSTR'
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(74,9): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast (TaskId:28)
+                   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(4433,1): message : see declaration of 'CreateWindowExW' (TaskId:28)
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(74,9): message : while trying to match the argument list '(long, const char [7], const char [9], long, int, int, int, int, HWND, HMENU, HINSTANCE, int)' (TaskId:28)
+09:17:41.763     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(92,13): error C2664: 'int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)': cannot convert argument 2 from 'const char [35]' to 'LPCWSTR'
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(92,30): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast (TaskId:28)
+                   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(9161,1): message : see declaration of 'MessageBoxW' (TaskId:28)
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(92,13): message : while trying to match the argument list '(HWND, const char [35], const char [8], long)' (TaskId:28)
+09:17:41.763     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(123,24): error C2440: '=': cannot convert from 'const char [14]' to 'LPCWSTR'
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(123,24): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast (TaskId:28)
+09:17:41.763     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(128,9): error C2664: 'int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)': cannot convert argument 2 from 'const char [28]' to 'LPCWSTR'
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(128,26): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast (TaskId:28)
+                   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(9161,1): message : see declaration of 'MessageBoxW' (TaskId:28)
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(128,9): message : while trying to match the argument list '(int, const char [28], const char [7], long)' (TaskId:28)
+09:17:41.763     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(132,12): error C2664: 'HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)': cannot convert argument 2 from 'const char [14]' to 'LPCWSTR'
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(134,9): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast (TaskId:28)
+                   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(4433,1): message : see declaration of 'CreateWindowExW' (TaskId:28)
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(132,12): message : while trying to match the argument list '(long, const char [14], const char [12], long, int, int, int, int, int, int, HINSTANCE, int)' (TaskId:28)
+09:17:41.763     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(142,9): error C2664: 'int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)': cannot convert argument 2 from 'const char [24]' to 'LPCWSTR'
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(142,26): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast (TaskId:28)
+                   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(9161,1): message : see declaration of 'MessageBoxW' (TaskId:28)
+                   C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(142,9): message : while trying to match the argument list '(int, const char [24], const char [7], long)' (TaskId:28)
+09:17:41.763     1>C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(154,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+                     The command exited with code 2. (TaskId:28)
+                   Done executing task "CL" -- FAILED. (TaskId:28)
+09:17:41.783     1>Done building target "ClCompile" in project "ScrollingScreenshotTool.vcxproj" -- FAILED.: (TargetId:55)
+09:17:41.783     1>Done Building Project "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (Build target(s)) -- FAILED.
 
 Project Evaluation Performance Summary:
-        9 ms  C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj   1 calls
+        8 ms  C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj   1 calls
 
 Project Performance Summary:
-      659 ms  C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj   1 calls
-                659 ms  Build                                      1 calls
+      446 ms  C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj   1 calls
+                446 ms  Build                                      1 calls
 
 Target Performance Summary:
-        0 ms  _CheckForInvalidConfigurationAndPlatform   1 calls
-        0 ms  SelectResourceCompile                      1 calls
-        0 ms  MakeDirsForResourceCompile                 1 calls
-        0 ms  BeforeResourceCompile                      1 calls
-        0 ms  _ClCompile                                 1 calls
-        0 ms  AfterClCompile                             1 calls
-        0 ms  SelectClCompile                            1 calls
-        0 ms  MakeDirsForCl                              1 calls
-        0 ms  AfterResourceCompile                       1 calls
-        0 ms  FixupCLCompileOptions                      1 calls
-        0 ms  WarnCompileDuplicatedFilename              1 calls
-        0 ms  ComputeReferenceCLInput                    1 calls
-        0 ms  GetReferencedVCProjectsInfo                1 calls
-        0 ms  FindReferenceAssembliesForReferences       1 calls
-        0 ms  ComputeCLInputPDBName                      1 calls
-        0 ms  BeforeClCompile                            1 calls
-        0 ms  BuildCompileTraverse                       1 calls
-        0 ms  ComputeStdModulesCompileInputs             1 calls
-        0 ms  _ResourceCompile                           1 calls
-        0 ms  AfterBuildCompileEvent                     1 calls
-        0 ms  _BuildCompileAction                        1 calls
-        0 ms  PreLinkEvent                               1 calls
-        0 ms  DoLinkOutputFilesMatch                     1 calls
-        0 ms  MakeDirsForLink                            1 calls
-        0 ms  PrepareResourceNames                       1 calls
-        0 ms  CreateCustomManifestResourceNames          1 calls
-        0 ms  AssignTargetPaths                          1 calls
-        0 ms  ComputeManifestInputsTargets               1 calls
-        0 ms  ComputeLinkInputsFromProject               1 calls
-        0 ms  ComputeCLGeneratedLinkInputs               1 calls
-        0 ms  ComputeCLOutputs                           1 calls
-        0 ms  ComputeManifestGeneratedLinkerInputs       1 calls
-        0 ms  ComputeRCGeneratedLinkInputs               1 calls
-        0 ms  ComputeRCOutputs                           1 calls
-        0 ms  BeforeLink                                 1 calls
-        0 ms  ComputeLegacyManifestEmbedding             1 calls
-        0 ms  BuildLinkTraverse                          1 calls
-        0 ms  BuildCompile                               1 calls
-        0 ms  ComputeLinkSwitches                        1 calls
-        0 ms  _BuildGenerateSourcesAction                1 calls
-        0 ms  BuildGenerateSources                       1 calls
-        0 ms  AfterBuildGenerateSources                  1 calls
-        0 ms  AfterBuildGenerateSourcesEvent             1 calls
-        0 ms  SetCABuildNativeEnvironmentVariables       1 calls
-        0 ms  GetResolvedWinMD                           1 calls
-        0 ms  SetBuildDefaultEnvironmentVariables        1 calls
-        0 ms  AddExternalIncludDirectoriesToPaths        1 calls
-        0 ms  GetReferenceAssemblyPaths                  1 calls
-        0 ms  GetFrameworkPaths                          1 calls
-        0 ms  ResolveProjectReferences                   1 calls
-        0 ms  PrepareProjectReferences                   1 calls
-        0 ms  _AddOutputPathToGlobalPropertiesToRemove   1 calls
-        0 ms  _SplitProjectReferencesByFileExistence     1 calls
-        0 ms  AssignProjectConfiguration                 1 calls
-        0 ms  BeforeResolveReferences                    1 calls
-        0 ms  _PrepareForReferenceResolution             1 calls
-        0 ms  _PrepareForBuild                           1 calls
-        0 ms  ExpandSDKReferences                        1 calls
-        0 ms  ResolveAssemblyReferences                  1 calls
-        0 ms  ResolveSDKReferences                       1 calls
-        0 ms  AfterResolveReferences                     1 calls
-        0 ms  _Midl                                      1 calls
-        0 ms  AfterMidl                                  1 calls
-        0 ms  ComputeMIDLGeneratedCompileInputs          1 calls
-        0 ms  MakeDirsForMidl                            1 calls
-        0 ms  _Xsd                                       1 calls
-        0 ms  CopyFileToFolders                          1 calls
-        0 ms  CustomBuild                                1 calls
+        0 ms  BeforeBuildGenerateSources                 1 calls
+        0 ms  _SelectedFiles                             1 calls
         0 ms  SelectCustomBuild                          1 calls
         0 ms  ComputeCustomBuildOutput                   1 calls
+        0 ms  CustomBuild                                1 calls
+        0 ms  CopyFileToFolders                          1 calls
+        0 ms  _Xsd                                       1 calls
+        0 ms  ComputeMIDLGeneratedCompileInputs          1 calls
+        0 ms  AfterMidl                                  1 calls
+        0 ms  _Midl                                      1 calls
+        0 ms  AfterBuildGenerateSources                  1 calls
+        0 ms  AfterBuildGenerateSourcesEvent             1 calls
+        0 ms  _BuildGenerateSourcesAction                1 calls
+        0 ms  BuildGenerateSources                       1 calls
+        0 ms  BuildCompileTraverse                       1 calls
+        0 ms  BeforeClCompile                            1 calls
+        0 ms  ComputeCLInputPDBName                      1 calls
+        0 ms  FindReferenceAssembliesForReferences       1 calls
+        0 ms  GetReferencedVCProjectsInfo                1 calls
+        0 ms  ComputeReferenceCLInput                    1 calls
+        0 ms  WarnCompileDuplicatedFilename              1 calls
+        0 ms  ComputeStdModulesCompileInputs             1 calls
         0 ms  PreBuildEvent                              1 calls
-        0 ms  BeforeBuildGenerateSources                 1 calls
+        0 ms  SelectClCompile                            1 calls
         0 ms  BuildGenerateSourcesTraverse               1 calls
+        0 ms  GetReferenceAssemblyPaths                  1 calls
+        0 ms  SetTelemetryEnvironmentVariables           1 calls
+        0 ms  _PrepareForBuild                           1 calls
+        0 ms  _PrepareForReferenceResolution             1 calls
+        0 ms  BeforeResolveReferences                    1 calls
+        0 ms  AssignProjectConfiguration                 1 calls
+        0 ms  _SplitProjectReferencesByFileExistence     1 calls
+        0 ms  _AddOutputPathToGlobalPropertiesToRemove   1 calls
+        0 ms  PrepareProjectReferences                   1 calls
+        0 ms  ResolveProjectReferences                   1 calls
+        0 ms  GetFrameworkPaths                          1 calls
+        0 ms  AddExternalIncludDirectoriesToPaths        1 calls
+        0 ms  MakeDirsForCl                              1 calls
+        0 ms  GetResolvedWinMD                           1 calls
+        0 ms  _CheckWindowsSDKInstalled                  1 calls
+        0 ms  SetCABuildNativeEnvironmentVariables       1 calls
+        0 ms  ResolveSDKReferences                       1 calls
+        0 ms  ExpandSDKReferences                        1 calls
+        0 ms  AfterResolveReferences                     1 calls
         0 ms  ResolveReferences                          1 calls
-        0 ms  _SelectedFiles                             1 calls
-        1 ms  SplitResourcesByCulture                    1 calls
-        1 ms  _GetProjectReferenceTargetFrameworkProperties   1 calls
-        1 ms  _CheckWindowsSDKInstalled                  1 calls
+        0 ms  SetBuildDefaultEnvironmentVariables        1 calls
         1 ms  PrepareForBuild                            1 calls
+        1 ms  MakeDirsForMidl                            1 calls
+        1 ms  ResolveAssemblyReferences                  1 calls
         1 ms  InitializeBuildStatus                      1 calls
-        1 ms  SetTelemetryEnvironmentVariables           1 calls
-       38 ms  ResourceCompile                            1 calls
-       89 ms  Link                                       1 calls
-      525 ms  ClCompile                                  1 calls
+        1 ms  FixupCLCompileOptions                      1 calls
+        1 ms  _GetProjectReferenceTargetFrameworkProperties   1 calls
+        1 ms  _CheckForInvalidConfigurationAndPlatform   1 calls
+      438 ms  ClCompile                                  1 calls
 
 Task Performance Summary:
-        0 ms  Message                                    2 calls
+        0 ms  SetEnv                                     9 calls
         0 ms  AssignProjectConfiguration                 1 calls
+        0 ms  MSBuild                                    1 calls
         0 ms  SetRidAgnosticValueForProjects             1 calls
-        0 ms  MakeDir                                    7 calls
         0 ms  CheckVCToolsetVersion                      1 calls
         0 ms  ReadLinesFromFile                          1 calls
-        0 ms  Touch                                      1 calls
+        0 ms  WriteLinesToFile                           1 calls
         0 ms  GetOutOfDateItems                          3 calls
-        0 ms  AssignTargetPath                           4 calls
-        0 ms  AssignCulture                              1 calls
-        1 ms  MSBuild                                    1 calls
-        1 ms  SetEnv                                     9 calls
-        1 ms  WriteLinesToFile                           1 calls
-       37 ms  RC                                         1 calls
-       88 ms  Link                                       1 calls
-      524 ms  CL                                         1 calls
+        1 ms  Message                                    2 calls
+        1 ms  MakeDir                                    5 calls
+        1 ms  Touch                                      1 calls
+      436 ms  CL                                         1 calls
 
 Build FAILED.
 
                    "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (Build target) (1) ->
-                   (Link target) -> 
-                     MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-                     C:\Users\13816\Desktop\ScrollingScreenshotTool\x64\Debug\ScrollingScreenshotTool.exe : fatal error LNK1120: 1 unresolved externals
+                   (ClCompile target) -> 
+                     C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(154,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
 
-    0 Warning(s)
-    2 Error(s)
 
-Time Elapsed 00:00:00.65
+                   "C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.vcxproj" (Build target) (1) ->
+                   (ClCompile target) -> 
+                     C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(74,9): error C2664: 'HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)': cannot convert argument 2 from 'const char [7]' to 'LPCWSTR'
+                     C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(92,13): error C2664: 'int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)': cannot convert argument 2 from 'const char [35]' to 'LPCWSTR'
+                     C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(123,24): error C2440: '=': cannot convert from 'const char [14]' to 'LPCWSTR'
+                     C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(128,9): error C2664: 'int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)': cannot convert argument 2 from 'const char [28]' to 'LPCWSTR'
+                     C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(132,12): error C2664: 'HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)': cannot convert argument 2 from 'const char [14]' to 'LPCWSTR'
+                     C:\Users\13816\Desktop\ScrollingScreenshotTool\ScrollingScreenshotTool.cpp(142,9): error C2664: 'int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)': cannot convert argument 2 from 'const char [24]' to 'LPCWSTR'
+
+    1 Warning(s)
+    6 Error(s)
+
+Time Elapsed 00:00:00.44

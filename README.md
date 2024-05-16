@@ -21,9 +21,8 @@ git config --global --unset https.proxy
 ![Screenshot of the application](readme/3.png)
 
 ```bash
-cl /EHsc /DUNICODE ScrollingScreenshotTool.cpp /link Gdiplus.lib Gdi32.lib User32.lib Ole32.lib
+cl /EHsc /Zi /MD /Fe:ScrollingScreenshotTool.exe ScrollingScreenshotTool.cpp user32.lib gdi32.lib gdiplus.lib ole32.lib
 ```
-
 
 ```bash
 cl /EHsc demo\main1.cpp user32.lib
