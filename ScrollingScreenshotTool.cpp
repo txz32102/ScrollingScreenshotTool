@@ -2,6 +2,7 @@
 #include <gdiplus.h>
 #include <iostream>
 #include <string>
+#include "Button.h"
 
 #pragma comment(lib, "Gdiplus.lib")
 #pragma comment(lib, "Gdi32.lib")
@@ -178,18 +179,11 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
     case WM_CREATE: {
-        CreateWindow(
-            L"BUTTON",
-            L"Click Me",
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
-            100,
-            100,
-            100,
-            30,
-            hwnd,
-            (HMENU)1,
-            (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE),
-            NULL);
+        Button button1;
+        button1.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 100, 100, 100, 30, 1, L"Click Me");
+
+        Button button2;
+        button2.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 220, 100, 100, 30, 2, L"New Button");
     }
                   break;
     case WM_COMMAND:
