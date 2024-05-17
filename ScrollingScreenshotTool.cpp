@@ -23,6 +23,9 @@ ULONG_PTR gdiplusToken;
 MyPoint startPoint, endPoint;
 bool capturing = false;
 HWND hOverlayWnd;
+HDC hdcScreen = NULL;
+HDC hdcMemDC = NULL;
+HBITMAP hBitmap = NULL;
 
 // Initialize GDI+
 void InitGDIPlus() {
@@ -92,10 +95,13 @@ void CaptureScreenshot() {
     int width = endPoint.x - startPoint.x;
     int height = endPoint.y - startPoint.y;
 
-    HDC hdcScreen = GetDC(NULL);
-    HDC hdcMemDC = CreateCompatibleDC(hdcScreen);
-    HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
-    SelectObject(hdcMemDC, hBitmap);
+    if (hdcScreen == NULL) {
+        hdcScreen = GetDC(NULL);
+        hdcMemDC = CreateCompatibleDC(hdcScreen);
+        hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
+        SelectObject(hdcMemDC, hBitmap);
+    }
+
     BitBlt(hdcMemDC, 0, 0, width, height, hdcScreen, startPoint.x, startPoint.y, SRCCOPY);
 
     SaveBitmapToFile(hBitmap, L"screenshot.png");
@@ -104,13 +110,6 @@ void CaptureScreenshot() {
     Bitmap bitmap(hBitmap, nullptr);
     Graphics graphics(GetDesktopWindow());
     graphics.DrawImage(&bitmap, startPoint.x, startPoint.y, width, height);
-
-    DeleteObject(hBitmap);
-    DeleteDC(hdcMemDC);
-    ReleaseDC(NULL, hdcScreen);
-
-    // Destroy the overlay window
-    DestroyWindow(hOverlayWnd);
 }
 
 // Mouse hook procedure
@@ -123,6 +122,11 @@ LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
             startPoint.y = mouseStruct->pt.y;
             capturing = true;
             std::cout << "Start Point: (" << startPoint.x << ", " << startPoint.y << ")\n";
+        }
+        else if (wParam == WM_MOUSEMOVE && capturing) {
+            endPoint.x = mouseStruct->pt.x;
+            endPoint.y = mouseStruct->pt.y;
+            InvalidateRect(hOverlayWnd, NULL, TRUE);
         }
         else if (wParam == WM_LBUTTONUP && capturing) {
             endPoint.x = mouseStruct->pt.x;
@@ -145,16 +149,25 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
         HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
         SetBkMode(hdc, TRANSPARENT);
         FillRect(hdc, &ps.rcPaint, hBrush);
-        DeleteObject(hBrush);
 
+        // Draw the selected region without fill
+        if (capturing) {
+            RECT rect;
+            rect.left = min(startPoint.x, endPoint.x);
+            rect.top = min(startPoint.y, endPoint.y);
+            rect.right = max(startPoint.x, endPoint.x);
+            rect.bottom = max(startPoint.y, endPoint.y);
+            FrameRect(hdc, &rect, (HBRUSH)GetStockObject(WHITE_BRUSH));
+        }
+
+        DeleteObject(hBrush);
         EndPaint(hwnd, &ps);
     }
                  break;
     case WM_LBUTTONDOWN:
-        PostMessage(GetParent(hwnd), WM_LBUTTONDOWN, wParam, lParam);
-        break;
     case WM_LBUTTONUP:
-        PostMessage(GetParent(hwnd), WM_LBUTTONUP, wParam, lParam);
+    case WM_MOUSEMOVE:
+        PostMessage(GetParent(hwnd), msg, wParam, lParam);
         break;
     default:
         return DefWindowProc(hwnd, msg, wParam, lParam);
@@ -214,6 +227,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         }
         break;
     case WM_DESTROY:
+        if (hdcMemDC) DeleteDC(hdcMemDC);
+        if (hBitmap) DeleteObject(hBitmap);
+        if (hdcScreen) ReleaseDC(NULL, hdcScreen);
         PostQuitMessage(0);
         break;
     default:
