@@ -214,11 +214,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
             CaptureScreenshot();
         }
+        else if (LOWORD(wParam) == 2) {
+            MessageBox(hwnd, L"Hello World", L"Message", MB_OK);
+            // This block handles the command for the control with ID 2
+        }
         break;
     case WM_CLOSE:
-        if (MessageBox(hwnd, L"Are you sure you want to close?", L"Close", MB_OKCANCEL) == IDOK) {
             DestroyWindow(hwnd);
-        }
         break;
     case WM_DESTROY:
         if (hdcMemDC) DeleteDC(hdcMemDC);
