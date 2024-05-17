@@ -80,6 +80,9 @@ void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
     }
     else {
         std::wcout << L"Screenshot saved as " << filePath << std::endl;
+
+        // Open the saved screenshot
+        ShellExecute(NULL, L"open", filePath, NULL, NULL, SW_SHOWNORMAL);
     }
 }
 
@@ -95,6 +98,11 @@ void CaptureScreenshot() {
     BitBlt(hdcMemDC, 0, 0, width, height, hdcScreen, startPoint.x, startPoint.y, SRCCOPY);
 
     SaveBitmapToFile(hBitmap, L"screenshot.png");
+
+    // Display the screenshot
+    Bitmap bitmap(hBitmap, nullptr);
+    Graphics graphics(GetDesktopWindow());
+    graphics.DrawImage(&bitmap, startPoint.x, startPoint.y, width, height);
 
     DeleteObject(hBitmap);
     DeleteDC(hdcMemDC);
@@ -150,7 +158,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                   break;
     case WM_COMMAND:
         if (LOWORD(wParam) == 1) {
-            ShowWindow(hwnd, SW_MINIMIZE);
+
 
             wchar_t buffer[10];
             GetWindowText(hEdit, buffer, 10);
@@ -169,7 +177,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             UnhookWindowsHookEx(mouseHook);
 
             CaptureScreenshot();
-            MessageBox(hwnd, L"Screenshot saved as screenshot.png", L"Message", MB_OK);
         }
         break;
     case WM_CLOSE:
@@ -188,7 +195,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     InitGDIPlus();
-
     WNDCLASSEX wc;
     HWND hwnd;
     MSG Msg;
