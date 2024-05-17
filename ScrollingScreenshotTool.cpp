@@ -18,10 +18,11 @@ struct MyPoint {
 
 // Global variables
 const wchar_t g_szClassName[] = L"myWindowClass";
+const wchar_t g_szOverlayClassName[] = L"myOverlayClass";
 ULONG_PTR gdiplusToken;
 MyPoint startPoint, endPoint;
 bool capturing = false;
-HWND hEdit;  // Input box handle
+HWND hOverlayWnd;
 
 // Initialize GDI+
 void InitGDIPlus() {
@@ -107,6 +108,9 @@ void CaptureScreenshot() {
     DeleteObject(hBitmap);
     DeleteDC(hdcMemDC);
     ReleaseDC(NULL, hdcScreen);
+
+    // Destroy the overlay window
+    DestroyWindow(hOverlayWnd);
 }
 
 // Mouse hook procedure
@@ -131,6 +135,33 @@ LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
     return CallNextHookEx(NULL, nCode, wParam, lParam);
 }
 
+LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
+    switch (msg) {
+    case WM_PAINT: {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hwnd, &ps);
+
+        // Set semi-transparent brush
+        HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
+        SetBkMode(hdc, TRANSPARENT);
+        FillRect(hdc, &ps.rcPaint, hBrush);
+        DeleteObject(hBrush);
+
+        EndPaint(hwnd, &ps);
+    }
+                 break;
+    case WM_LBUTTONDOWN:
+        PostMessage(GetParent(hwnd), WM_LBUTTONDOWN, wParam, lParam);
+        break;
+    case WM_LBUTTONUP:
+        PostMessage(GetParent(hwnd), WM_LBUTTONUP, wParam, lParam);
+        break;
+    default:
+        return DefWindowProc(hwnd, msg, wParam, lParam);
+    }
+    return 0;
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
     case WM_CREATE: {
@@ -146,25 +177,23 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             (HMENU)1,
             (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE),
             NULL);
-
-        // Create input box
-        hEdit = CreateWindow(
-            L"EDIT",
-            L"",
-            WS_CHILD | WS_VISIBLE | WS_BORDER | ES_NUMBER,
-            100, 50, 100, 25,
-            hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
     }
                   break;
     case WM_COMMAND:
         if (LOWORD(wParam) == 1) {
+            // Create an overlay window
+            hOverlayWnd = CreateWindowEx(
+                WS_EX_LAYERED,
+                g_szOverlayClassName,
+                NULL,
+                WS_POPUP,
+                0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN),
+                hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
 
-
-            wchar_t buffer[10];
-            GetWindowText(hEdit, buffer, 10);
-            int delaySeconds = _wtoi(buffer);
-
-            Sleep(delaySeconds * 1000);
+            if (hOverlayWnd) {
+                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency
+                ShowWindow(hOverlayWnd, SW_SHOW);
+            }
 
             // Set mouse hook
             HHOOK mouseHook = SetWindowsHookEx(WH_MOUSE_LL, LowLevelMouseProc, NULL, 0);
@@ -214,6 +243,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     if (!RegisterClassEx(&wc)) {
         MessageBox(NULL, L"Window Registration Failed!", L"Error!", MB_ICONEXCLAMATION | MB_OK);
+        ShutdownGDIPlus();
+        return 0;
+    }
+
+    wc.lpszClassName = g_szOverlayClassName;
+    wc.lpfnWndProc = OverlayWndProc;
+    wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+    if (!RegisterClassEx(&wc)) {
+        MessageBox(NULL, L"Overlay Window Registration Failed!", L"Error!", MB_ICONEXCLAMATION | MB_OK);
         ShutdownGDIPlus();
         return 0;
     }
