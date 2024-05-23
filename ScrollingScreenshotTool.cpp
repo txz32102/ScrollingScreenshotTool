@@ -17,6 +17,7 @@ struct MyPoint {
     int y;
 };
 
+
 // Global variables
 const wchar_t g_szClassName[] = L"myWindowClass";
 const wchar_t g_szOverlayClassName[] = L"myOverlayClass";
@@ -111,9 +112,14 @@ void CaptureScreenshot() {
     Bitmap bitmap(hBitmap, nullptr);
     Graphics graphics(GetDesktopWindow());
     graphics.DrawImage(&bitmap, startPoint.x, startPoint.y, width, height);
+    //修改了每次截完图会卡住的问题 5.23 把遮罩删掉了
+    if (hOverlayWnd) {
+        DestroyWindow(hOverlayWnd);
+        hOverlayWnd = NULL;
+    }
 }
 
-// Mouse hook procedure
+ //Mouse hook procedure
 LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
     if (nCode == HC_ACTION) {
         MSLLHOOKSTRUCT* mouseStruct = (MSLLHOOKSTRUCT*)lParam;
@@ -147,7 +153,7 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
         HDC hdc = BeginPaint(hwnd, &ps);
 
         // Set semi-transparent brush
-        HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
+        HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));//遮罩为白色
         SetBkMode(hdc, TRANSPARENT);
         FillRect(hdc, &ps.rcPaint, hBrush);
 
@@ -176,6 +182,7 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
     return 0;
 }
 
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
     case WM_CREATE: {
@@ -198,7 +205,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                 hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
 
             if (hOverlayWnd) {
-                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency
+                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency 遮罩透明度为128
                 ShowWindow(hOverlayWnd, SW_SHOW);
             }
 
@@ -289,6 +296,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         TranslateMessage(&Msg);
         DispatchMessage(&Msg);
     }
+
+
 
     ShutdownGDIPlus();
     return (int)Msg.wParam;
