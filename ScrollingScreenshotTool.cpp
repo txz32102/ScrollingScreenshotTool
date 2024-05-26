@@ -122,12 +122,45 @@ void CaptureScreenshot() {
     }
 }
 
+void CaptureScreen1920x1080() {
+    // Get the screen dimensions
+    int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    // Calculate the width and height for a 1920x1080 screenshot
+    int captureWidth = 1920;
+    int captureHeight = 1080;
+
+    // Calculate the starting point for the screenshot to capture the top-left corner
+    int captureX = (screenWidth - captureWidth) / 2;
+    int captureY = (screenHeight - captureHeight) / 2;
+
+    // Create compatible DC and bitmap for capturing the screen
+    HDC hdcScreen = GetDC(NULL);
+    HDC hdcMemDC = CreateCompatibleDC(hdcScreen);
+    HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, captureWidth, captureHeight);
+    SelectObject(hdcMemDC, hBitmap);
+
+    // Capture the screen
+    BitBlt(hdcMemDC, 0, 0, captureWidth, captureHeight, hdcScreen, captureX, captureY, SRCCOPY);
+
+    // Save the bitmap as BMP file
+    SaveBitmapToFile(hBitmap, L"screenshot.bmp");
+
+    // Clean up
+    DeleteObject(hBitmap);
+    DeleteDC(hdcMemDC);
+    ReleaseDC(NULL, hdcScreen);
+}
+
+
 void FullWindow(const wchar_t* imagePath) {
     // Check if the file exists
     if (!PathFileExists(imagePath)) {
         std::cerr << "Error: Image file not found\n";
         return;
     }
+    std::cout << "imagePath is loaded\n";
 
     // Register window class
     WNDCLASS wc = { 0 };
@@ -141,6 +174,8 @@ void FullWindow(const wchar_t* imagePath) {
     // Load the image
     HBITMAP hBitmap = (HBITMAP)LoadImage(NULL, imagePath, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
     if (!hBitmap) {
+        std::wcout << L"Image Path: " << imagePath << std::endl;
+        std::cout << "error\n";
         std::cerr << "Error: Failed to load image\n";
         return;
     }
@@ -154,7 +189,7 @@ void FullWindow(const wchar_t* imagePath) {
         0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN),
         NULL, NULL, GetModuleHandle(NULL), NULL
     );
-
+    std::cout << "hWnd is " << hWnd << std::endl;
     if (hWnd) {
         // Set window transparency
         SetLayeredWindowAttributes(hWnd, 0, 255, LWA_ALPHA);
@@ -273,11 +308,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             CaptureScreenshot();
         }
         else if (LOWORD(wParam) == 2) {
+            CaptureScreen1920x1080();
             MessageBox(hwnd, L"Hello World", L"Message", MB_OK);
             // This block handles the command for the control with ID 2
         }
         else if (LOWORD(wParam) == 3) {
-            FullWindow(L"screenshot.png");
+            FullWindow(L"C:\\Users\\13816\\Desktop\\ScrollingScreenshotTool\\screenshot.bmp");
         }
         break;
     case WM_CLOSE:
@@ -296,6 +332,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+    AllocConsole();
+    FILE* consoleOut;
+    freopen_s(&consoleOut, "CONOUT$", "w", stdout);
     InitGDIPlus();
     WNDCLASSEX wc;
     HWND hwnd;
