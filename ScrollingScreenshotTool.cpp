@@ -3,11 +3,14 @@
 #include <iostream>
 #include <string>
 #include "Button.h"
+#include <Shlwapi.h>
 
 #pragma comment(lib, "Gdiplus.lib")
 #pragma comment(lib, "Gdi32.lib")
 #pragma comment(lib, "User32.lib")
 #pragma comment(lib, "Ole32.lib")
+#pragma comment(lib, "Shlwapi.lib")
+
 
 using namespace Gdiplus;
 
@@ -112,12 +115,57 @@ void CaptureScreenshot() {
     Bitmap bitmap(hBitmap, nullptr);
     Graphics graphics(GetDesktopWindow());
     graphics.DrawImage(&bitmap, startPoint.x, startPoint.y, width, height);
-    //пч╦дакц©╢н╫ьмЙм╪╩А©╗в║╣днйлБ 5.23 ╟яузужи╬╣Так
+    //О©╫ч╦О©╫О©╫О©╫ц©О©╫н╫О©╫О©╫О©╫м╪О©╫А©╗в║О©╫О©╫О©╫О©╫О©╫О©╫ 5.23 О©╫О©╫О©╫О©╫О©╫О©╫и╬О©╫О©╫О©╫О©╫
     if (hOverlayWnd) {
         DestroyWindow(hOverlayWnd);
         hOverlayWnd = NULL;
     }
 }
+
+void FullWindow(const wchar_t* imagePath) {
+    // Check if the file exists
+    if (!PathFileExists(imagePath)) {
+        std::cerr << "Error: Image file not found\n";
+        return;
+    }
+
+    // Register window class
+    WNDCLASS wc = { 0 };
+    wc.lpfnWndProc = DefWindowProc;
+    wc.hInstance = GetModuleHandle(NULL);
+    wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wc.lpszClassName = L"FullWindowClass";
+
+    RegisterClass(&wc);
+
+    // Load the image
+    HBITMAP hBitmap = (HBITMAP)LoadImage(NULL, imagePath, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    if (!hBitmap) {
+        std::cerr << "Error: Failed to load image\n";
+        return;
+    }
+
+    // Create window
+    HWND hWnd = CreateWindowEx(
+        WS_EX_LAYERED | WS_EX_TOPMOST,
+        L"FullWindowClass",
+        L"Full Window",
+        WS_POPUP,
+        0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN),
+        NULL, NULL, GetModuleHandle(NULL), NULL
+    );
+
+    if (hWnd) {
+        // Set window transparency
+        SetLayeredWindowAttributes(hWnd, 0, 255, LWA_ALPHA);
+        // Set window background to the loaded image
+        SetClassLongPtr(hWnd, GCLP_HBRBACKGROUND, (LONG)CreatePatternBrush(hBitmap));
+        // Show window
+        ShowWindow(hWnd, SW_SHOW);
+        UpdateWindow(hWnd);
+    }
+}
+
 
  //Mouse hook procedure
 LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
@@ -153,7 +201,7 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
         HDC hdc = BeginPaint(hwnd, &ps);
 
         // Set semi-transparent brush
-        HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));//узужн╙╟ви╚
+        HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));//О©╫О©╫О©╫О©╫н╙О©╫О©╫и╚
         SetBkMode(hdc, TRANSPARENT);
         FillRect(hdc, &ps.rcPaint, hBrush);
 
@@ -191,6 +239,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
         Button button2;
         button2.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 220, 100, 100, 30, 2, L"New Button");
+
+        Button button3;
+        button2.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 340, 100, 100, 30, 3, L"Debug");
     }
                   break;
     case WM_COMMAND:
@@ -205,7 +256,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                 hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
 
             if (hOverlayWnd) {
-                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency узужм╦цВ╤хн╙128
+                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency О©╫О©╫О©╫О©╫м╦О©╫О©╫О©╫О©╫н╙128
                 ShowWindow(hOverlayWnd, SW_SHOW);
             }
 
@@ -224,6 +275,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         else if (LOWORD(wParam) == 2) {
             MessageBox(hwnd, L"Hello World", L"Message", MB_OK);
             // This block handles the command for the control with ID 2
+        }
+        else if (LOWORD(wParam) == 3) {
+            FullWindow(L"screenshot.png");
         }
         break;
     case WM_CLOSE:
