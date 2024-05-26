@@ -111,11 +111,6 @@ void CaptureScreenshot() {
 
     SaveBitmapToFile(hBitmap, L"screenshot.png");
 
-    // Display the screenshot
-    Bitmap bitmap(hBitmap, nullptr);
-    Graphics graphics(GetDesktopWindow());
-    graphics.DrawImage(&bitmap, startPoint.x, startPoint.y, width, height);
-    //�޸���ÿ�ν���ͼ�Ῠס������ 5.23 ������ɾ����
     if (hOverlayWnd) {
         DestroyWindow(hOverlayWnd);
         hOverlayWnd = NULL;
