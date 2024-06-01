@@ -4,6 +4,7 @@
 #include <string>
 #include "Button.h"
 #include <Shlwapi.h>
+#include <tchar.h>
 
 #pragma comment(lib, "Gdiplus.lib")
 #pragma comment(lib, "Gdi32.lib")
@@ -304,7 +305,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         }
         else if (LOWORD(wParam) == 2) {
             CaptureScreen1920x1080();
-            MessageBox(hwnd, L"Hello World", L"Message", MB_OK);
+            MessageBox(hwnd, L"Screenshot completed!", L"Message", MB_OK);
             // This block handles the command for the control with ID 2
         }
         else if (LOWORD(wParam) == 3) {
@@ -319,6 +320,23 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         if (hBitmap) DeleteObject(hBitmap);
         if (hdcScreen) ReleaseDC(NULL, hdcScreen);
         PostQuitMessage(0);
+        break;
+    case WM_KEYDOWN:
+        switch (wParam) {
+        case VK_ESCAPE: // ESC键
+            DestroyWindow(hwnd); // 关闭窗口
+            break;
+        case VK_F1:
+            PostMessage(hwnd, WM_COMMAND, MAKELPARAM(1, 0), 0);
+            break;
+        case VK_F2:
+            PostMessage(hwnd, WM_COMMAND, MAKELPARAM(2, 0), 0);
+            break;
+        case VK_F3:
+            PostMessage(hwnd, WM_COMMAND, MAKELPARAM(3, 0), 0);//MAKELPARAM(3, 0) 的意思是将 3 作为低位字（低 16 位），将 0 作为高位字（高 16 位）最后的0表示无附加消息
+            //hwnd: 这是窗口的句柄，表示消息将被发送到的窗口。WM_COMMAND : 这是消息类型，表示发送的是一个命令消息。
+            break;
+        }
         break;
     default:
         return DefWindowProc(hwnd, msg, wParam, lParam);
