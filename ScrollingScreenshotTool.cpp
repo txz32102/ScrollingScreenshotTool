@@ -5,6 +5,8 @@
 #include "Button.h"
 #include <Shlwapi.h>
 #include <tchar.h>
+#include <commdlg.h> // 添加头文件
+#include <shlobj.h> // 添加头文件
 
 #pragma comment(lib, "Gdiplus.lib")
 #pragma comment(lib, "Gdi32.lib")
@@ -29,6 +31,7 @@ HWND hOverlayWnd;
 HDC hdcScreen = NULL;
 HDC hdcMemDC = NULL;
 HBITMAP hBitmap = NULL;
+std::wstring saveDirectory = L"."; // 默认保存路径为当前目录
 
 // Initialize GDI+
 void InitGDIPlus() {
@@ -66,7 +69,8 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid) {
     free(pImageCodecInfo);
     return -1;
 }
-void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
+
+void SaveBitmapToFile(HBITMAP hBitmap, const std::wstring& fileName) {
     Bitmap bitmap(hBitmap, nullptr);
     if (bitmap.GetLastStatus() != Ok) {
         std::wcerr << L"Failed to create GDI+ Bitmap" << std::endl;
@@ -79,17 +83,53 @@ void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
         return;
     }
 
-    Status status = bitmap.Save(filePath, &clsid, nullptr);
+    std::wstring filePath = saveDirectory + L"\\" + fileName;
+    if (!PathFileExists(saveDirectory.c_str())) {
+        std::wcerr << L"Save directory does not exist. Saving to current directory." << std::endl;
+        filePath = L"./" + fileName;
+    }
+
+    Status status = bitmap.Save(filePath.c_str(), &clsid, nullptr);
     if (status != Ok) {
         std::wcerr << L"Failed to save bitmap to file" << std::endl;
     }
     else {
         std::wcout << L"Screenshot saved as " << filePath << std::endl;
-
+        
         // Open the saved screenshot
-        ShellExecute(NULL, L"open", filePath, NULL, NULL, SW_SHOWNORMAL);
+        ShellExecute(NULL, L"open", filePath.c_str(), NULL, NULL, SW_SHOWNORMAL);
     }
 }
+
+void SaveWatermarkBitmapToFile(HBITMAP hBitmap, const std::wstring& fileName) {
+    Bitmap bitmap(hBitmap, nullptr);
+    if (bitmap.GetLastStatus() != Ok) {
+        std::wcerr << L"Failed to create GDI+ Bitmap" << std::endl;
+        return;
+    }
+
+    CLSID clsid;
+    if (GetEncoderClsid(L"image/png", &clsid) == -1) {
+        std::wcerr << L"Failed to get PNG encoder CLSID" << std::endl;
+        return;
+    }
+
+    std::wstring filePath = saveDirectory + L"\\" + fileName;
+    if (!PathFileExists(saveDirectory.c_str())) {
+        std::wcerr << L"Save directory does not exist. Saving to current directory." << std::endl;
+        filePath = L"./" + fileName;
+    }
+
+    Status status = bitmap.Save(filePath.c_str(), &clsid, nullptr);
+    if (status != Ok) {
+        std::wcerr << L"Failed to save bitmap to file" << std::endl;
+    }
+    else {
+        std::wcout << L"Screenshot with watermark saved as " << filePath << std::endl;
+        ShellExecute(NULL, L"open", filePath.c_str(), NULL, NULL, SW_SHOWNORMAL);
+    }
+}
+
 // Capture screenshot
 void CaptureScreenshot() {
     int width = endPoint.x - startPoint.x;
@@ -103,7 +143,7 @@ void CaptureScreenshot() {
 
     SaveBitmapToFile(hBitmap, L"screenshot.png");
     std::cout << "hello world" << std::endl;
-  //// Display the screenshot
+    //// Display the screenshot
   //  Bitmap bitmap(hBitmap, nullptr);
   //  Graphics graphics(GetDesktopWindow());
   //  graphics.DrawImage(&bitmap, startPoint.x, startPoint.y, width, height);
@@ -116,32 +156,6 @@ void CaptureScreenshot() {
     DestroyWindow(hOverlayWnd);
 }
 
-
-
-void SaveWatermarkBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
-    Bitmap bitmap(hBitmap, nullptr);
-    if (bitmap.GetLastStatus() != Ok) {
-        std::wcerr << L"Failed to create GDI+ Bitmap" << std::endl;
-        return;
-    }
-
-    CLSID clsid;
-    if (GetEncoderClsid(L"image/png", &clsid) == -1) {
-        std::wcerr << L"Failed to get PNG encoder CLSID" << std::endl;
-        return;
-    }
-
-    Status status = bitmap.Save(filePath, &clsid, nullptr);
-    if (status != Ok) {
-        std::wcerr << L"Failed to save bitmap to file" << std::endl;
-    }
-    else {
-        std::wcout << L"Screenshot with watermark saved as " << filePath << std::endl;
-
-        // Open the saved screenshot with watermark
-        ShellExecute(NULL, L"open", filePath, NULL, NULL, SW_SHOWNORMAL);
-    }
-}
 void CaptureWatermarkScreenshot() {
     // 获取截图的宽度和高度
     int width = endPoint.x - startPoint.x;
@@ -218,6 +232,7 @@ void CaptureWatermarkScreen1920x1080() {
     DeleteDC(hdcMemDC);
     ReleaseDC(NULL, hdcScreen);
 }
+
 void CaptureScreen1920x1080() {
     // Get the screen dimensions
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);
@@ -296,7 +311,6 @@ void FullWindow(const wchar_t* imagePath) {
         UpdateWindow(hWnd);
     }
 }
-
 
 LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
     if (nCode == HC_ACTION) {
@@ -383,6 +397,20 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
     }
     return 0;
 }
+//选择保存图片的路径
+void ChooseSaveDirectory(HWND hwnd) {
+    BROWSEINFO bi = { 0 };
+    bi.lpszTitle = L"Select Save Directory";
+    LPITEMIDLIST pidl = SHBrowseForFolder(&bi);
+    if (pidl != 0) {
+        wchar_t path[MAX_PATH];
+        if (SHGetPathFromIDList(pidl, path)) {
+            saveDirectory = path;
+            std::wcout << L"Selected Save Directory: " << saveDirectory << std::endl;
+        }
+        CoTaskMemFree(pidl);
+    }
+}
 
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
@@ -402,6 +430,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
         Button button5;
         button5.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 240, 150, 140, 30, 5, L"Full Watermark");
+
+        Button button6;
+        button6.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 60, 200, 200, 30, 6, L"Choose Save Directory");
     }
                   break;
     case WM_COMMAND:
@@ -416,7 +447,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                 hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
 
             if (hOverlayWnd) {
-                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency ����͸����Ϊ128
+                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA);
                 ShowWindow(hOverlayWnd, SW_SHOW);
             }
 
@@ -451,7 +482,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                 hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
 
             if (hOverlayWnd) {
-                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency ����͸����Ϊ128
+                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA);
                 ShowWindow(hOverlayWnd, SW_SHOW);
             }
 
@@ -472,9 +503,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             CaptureWatermarkScreen1920x1080();
             MessageBox(hwnd, L"Screenshot completed!", L"Message", MB_OK);
         }
+        else if (LOWORD(wParam) == 6) {
+            ChooseSaveDirectory(hwnd);
+        }
         break;
     case WM_CLOSE:
-            DestroyWindow(hwnd);
+        DestroyWindow(hwnd);
         break;
     case WM_DESTROY:
         if (hdcMemDC) DeleteDC(hdcMemDC);
@@ -569,9 +603,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         TranslateMessage(&Msg);
         DispatchMessage(&Msg);
     }
-
-
-
     ShutdownGDIPlus();
     return (int)Msg.wParam;
 }
