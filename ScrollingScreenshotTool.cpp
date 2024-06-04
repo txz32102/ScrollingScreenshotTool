@@ -12,15 +12,12 @@
 #pragma comment(lib, "Ole32.lib")
 #pragma comment(lib, "Shlwapi.lib")
 
-
 using namespace Gdiplus;
-
 // Custom Point structure to avoid conflict with Gdiplus::Point
 struct MyPoint {
     int x;
     int y;
 };
-
 
 // Global variables
 const wchar_t g_szClassName[] = L"myWindowClass";
@@ -69,8 +66,6 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid) {
     free(pImageCodecInfo);
     return -1;
 }
-
-// Save bitmap to file
 void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
     Bitmap bitmap(hBitmap, nullptr);
     if (bitmap.GetLastStatus() != Ok) {
@@ -95,7 +90,6 @@ void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
         ShellExecute(NULL, L"open", filePath, NULL, NULL, SW_SHOWNORMAL);
     }
 }
-
 // Capture screenshot
 void CaptureScreenshot() {
     int width = endPoint.x - startPoint.x;
@@ -122,6 +116,108 @@ void CaptureScreenshot() {
     DestroyWindow(hOverlayWnd);
 }
 
+
+
+void SaveWatermarkBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
+    Bitmap bitmap(hBitmap, nullptr);
+    if (bitmap.GetLastStatus() != Ok) {
+        std::wcerr << L"Failed to create GDI+ Bitmap" << std::endl;
+        return;
+    }
+
+    CLSID clsid;
+    if (GetEncoderClsid(L"image/png", &clsid) == -1) {
+        std::wcerr << L"Failed to get PNG encoder CLSID" << std::endl;
+        return;
+    }
+
+    Status status = bitmap.Save(filePath, &clsid, nullptr);
+    if (status != Ok) {
+        std::wcerr << L"Failed to save bitmap to file" << std::endl;
+    }
+    else {
+        std::wcout << L"Screenshot with watermark saved as " << filePath << std::endl;
+
+        // Open the saved screenshot with watermark
+        ShellExecute(NULL, L"open", filePath, NULL, NULL, SW_SHOWNORMAL);
+    }
+}
+void CaptureWatermarkScreenshot() {
+    // 获取截图的宽度和高度
+    int width = endPoint.x - startPoint.x;
+    int height = endPoint.y - startPoint.y;
+
+    // 创建兼容的 DC 和位图
+    HDC hdcScreen = GetDC(NULL);
+    HDC hdcMemDC = CreateCompatibleDC(hdcScreen);
+    HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
+    SelectObject(hdcMemDC, hBitmap);
+    BitBlt(hdcMemDC, 0, 0, width, height, hdcScreen, startPoint.x, startPoint.y, SRCCOPY);
+
+    // 创建 Graphics 对象
+    Graphics graphics(hdcMemDC); // 从 HDC 对象创建 Graphics 对象
+
+    FontFamily fontFamily(L"Arial");
+    Gdiplus::Font font(&fontFamily, 28, FontStyleRegular, UnitPixel);
+    SolidBrush brush(Color(255, 255, 0, 128)); // Semi-transparent white
+    int centerX = width / 2.0;
+    int centerY = height / 2.0;
+
+    // 在截图上绘制水印文本
+    graphics.DrawString(L"@watermark", -1, &font, PointF(centerX, centerY), &brush);
+
+    // 保存带有水印的位图
+    SaveBitmapToFile(hBitmap, L"screenshot_with_watermark.png");
+    std::cout << "hello world" << std::endl;
+
+    DeleteObject(hBitmap);
+    DeleteDC(hdcMemDC);
+    ReleaseDC(NULL, hdcScreen);
+
+    // Destroy the overlay window
+    DestroyWindow(hOverlayWnd);
+}
+
+
+void CaptureWatermarkScreen1920x1080() {
+    // Get the screen dimensions
+    int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    // Calculate the width and height for a 1920x1080 screenshot
+    int captureWidth = 1920;
+    int captureHeight = 1080;
+
+    // Calculate the starting point for the screenshot to capture the top-left corner
+    int captureX = (screenWidth - captureWidth) / 2;
+    int captureY = (screenHeight - captureHeight) / 2;
+
+    // Create compatible DC and bitmap for capturing the screen
+    HDC hdcScreen = GetDC(NULL);
+    HDC hdcMemDC = CreateCompatibleDC(hdcScreen);
+    HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, captureWidth, captureHeight);
+    SelectObject(hdcMemDC, hBitmap);
+
+    // Capture the screen
+    BitBlt(hdcMemDC, 0, 0, captureWidth, captureHeight, hdcScreen, captureX, captureY, SRCCOPY);
+    Graphics graphics(hdcMemDC); // 从 HDC 对象创建 Graphics 对象
+
+    FontFamily fontFamily(L"Arial");
+    Gdiplus::Font font(&fontFamily, 28, FontStyleRegular, UnitPixel);
+    SolidBrush brush(Color(255, 255, 0, 128)); // Semi-transparent white
+    int centerX = screenWidth / 2.0;
+    int centerY = screenHeight / 2.0;
+
+    // 在截图上绘制水印文本
+    graphics.DrawString(L"@watermark", -1, &font, PointF(centerX, centerY), &brush);
+    // Save the bitmap as BMP file
+    SaveBitmapToFile(hBitmap, L"screenshot.bmp");
+
+    // Clean up
+    DeleteObject(hBitmap);
+    DeleteDC(hdcMemDC);
+    ReleaseDC(NULL, hdcScreen);
+}
 void CaptureScreen1920x1080() {
     // Get the screen dimensions
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);
@@ -293,13 +389,19 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
     case WM_CREATE: {
         Button button1;
-        button1.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 100, 100, 100, 30, 1, L"Click Me");
+        button1.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 60, 100, 100, 30, 1, L"Partial");
 
         Button button2;
-        button2.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 220, 100, 100, 30, 2, L"New Button");
+        button2.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 200, 100, 100, 30, 2, L"Full");
 
         Button button3;
-        button2.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 340, 100, 100, 30, 3, L"Debug");
+        button3.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 340, 100, 100, 30, 3, L"Debug");
+
+        Button button4;
+        button4.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 60, 150, 140, 30, 4, L"Partial Watermark");
+
+        Button button5;
+        button5.Create(hwnd, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), 240, 150, 140, 30, 5, L"Full Watermark");
     }
                   break;
     case WM_COMMAND:
@@ -337,6 +439,38 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         }
         else if (LOWORD(wParam) == 3) {
             FullWindow(L"C:\\Users\\13816\\Desktop\\ScrollingScreenshotTool\\screenshot.bmp");
+        }
+        else if (LOWORD(wParam) == 4) {
+            //CaptureScreenshotWithWatermark();
+            hOverlayWnd = CreateWindowEx(
+                WS_EX_LAYERED,
+                g_szOverlayClassName,
+                NULL,
+                WS_POPUP,
+                0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN),
+                hwnd, NULL, (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE), NULL);
+
+            if (hOverlayWnd) {
+                SetLayeredWindowAttributes(hOverlayWnd, 0, 128, LWA_ALPHA); // Set transparency ����͸����Ϊ128
+                ShowWindow(hOverlayWnd, SW_SHOW);
+            }
+
+            // Set mouse hook
+            HHOOK mouseHook = SetWindowsHookEx(WH_MOUSE_LL, LowLevelMouseProc, NULL, 0);
+            std::cout << "Move the mouse to the start point and click...\n";
+            MSG msg;
+            while (GetMessage(&msg, NULL, 0, 0)) {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+            UnhookWindowsHookEx(mouseHook);
+
+            CaptureWatermarkScreenshot();
+        }
+        else if (LOWORD(wParam) == 5) {
+            //CaptureFullScreenshotWithWatermark();
+            CaptureWatermarkScreen1920x1080();
+            MessageBox(hwnd, L"Screenshot completed!", L"Message", MB_OK);
         }
         break;
     case WM_CLOSE:
@@ -413,7 +547,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         g_szClassName,
         L"Screenshot Application",
         WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, CW_USEDEFAULT, 540, 200,
+        CW_USEDEFAULT, CW_USEDEFAULT, 540, 300,
         NULL, NULL, hInstance, NULL);
 
     if (hwnd == NULL) {

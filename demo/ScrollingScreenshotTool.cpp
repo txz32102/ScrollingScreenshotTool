@@ -84,22 +84,60 @@ void SaveBitmapToFile(HBITMAP hBitmap, const WCHAR* filePath) {
 }
 
 // Capture screenshot
+//void CaptureScreenshot() {
+//    int width = endPoint.x - startPoint.x;
+//    int height = endPoint.y - startPoint.y;
+//
+//    HDC hdcScreen = GetDC(NULL);
+//    HDC hdcMemDC = CreateCompatibleDC(hdcScreen);
+//    HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
+//    SelectObject(hdcMemDC, hBitmap);
+//    BitBlt(hdcMemDC, 0, 0, width, height, hdcScreen, startPoint.x, startPoint.y, SRCCOPY);
+//
+//    SaveBitmapToFile(hBitmap, L"screenshot.png");
+//
+//    DeleteObject(hBitmap);
+//    DeleteDC(hdcMemDC);
+//    ReleaseDC(NULL, hdcScreen);
+//}
+// CaptureScreenshot 函数
 void CaptureScreenshot() {
+    // 获取截图的宽度和高度
     int width = endPoint.x - startPoint.x;
     int height = endPoint.y - startPoint.y;
 
+    // 获取屏幕尺寸
+    int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    // 创建兼容的 DC 和位图
     HDC hdcScreen = GetDC(NULL);
     HDC hdcMemDC = CreateCompatibleDC(hdcScreen);
     HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
     SelectObject(hdcMemDC, hBitmap);
     BitBlt(hdcMemDC, 0, 0, width, height, hdcScreen, startPoint.x, startPoint.y, SRCCOPY);
 
-    SaveBitmapToFile(hBitmap, L"screenshot.png");
+    // 创建 Graphics 对象
+    Graphics graphics(&bitmap);
 
+    // 设置水印文本样式
+    FontFamily fontFamily(L"Arial");
+    Gdiplus::Font font(&fontFamily, 14, FontStyleRegular, UnitPixel);
+    SolidBrush brush(Color(255, 255, 255, 128)); // Semi-transparent white
+    PointF point(10, 10); // 水印文本的起始位置
+
+    // 在截图上绘制水印文本
+    graphics.DrawString(L"Watermark Text", -1, &font, point, &brush);
+
+    // 保存带有水印的位图
+    SaveBitmapToFile(hBitmap, L"screenshot_with_watermark.png");
+
+    // 清理资源
     DeleteObject(hBitmap);
     DeleteDC(hdcMemDC);
     ReleaseDC(NULL, hdcScreen);
 }
+
 
 // Mouse hook procedure
 LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
