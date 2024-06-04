@@ -158,7 +158,7 @@ void CaptureWatermarkScreenshot() {
     Graphics graphics(hdcMemDC); // 从 HDC 对象创建 Graphics 对象
 
     FontFamily fontFamily(L"Arial");
-    Gdiplus::Font font(&fontFamily, 28, FontStyleRegular, UnitPixel);
+    Gdiplus::Font font(&fontFamily, 25, FontStyleRegular, UnitPixel);
     SolidBrush brush(Color(255, 255, 0, 128)); // Semi-transparent white
     int centerX = width / 2.0;
     int centerY = height / 2.0;
@@ -167,7 +167,7 @@ void CaptureWatermarkScreenshot() {
     graphics.DrawString(L"@watermark", -1, &font, PointF(centerX, centerY), &brush);
 
     // 保存带有水印的位图
-    SaveBitmapToFile(hBitmap, L"screenshot_with_watermark.png");
+    SaveWatermarkBitmapToFile(hBitmap, L"screenshot_with_watermark.png");
     std::cout << "hello world" << std::endl;
 
     DeleteObject(hBitmap);
@@ -203,7 +203,7 @@ void CaptureWatermarkScreen1920x1080() {
     Graphics graphics(hdcMemDC); // 从 HDC 对象创建 Graphics 对象
 
     FontFamily fontFamily(L"Arial");
-    Gdiplus::Font font(&fontFamily, 28, FontStyleRegular, UnitPixel);
+    Gdiplus::Font font(&fontFamily, 40, FontStyleRegular, UnitPixel);
     SolidBrush brush(Color(255, 255, 0, 128)); // Semi-transparent white
     int centerX = screenWidth / 2.0;
     int centerY = screenHeight / 2.0;
@@ -211,7 +211,7 @@ void CaptureWatermarkScreen1920x1080() {
     // 在截图上绘制水印文本
     graphics.DrawString(L"@watermark", -1, &font, PointF(centerX, centerY), &brush);
     // Save the bitmap as BMP file
-    SaveBitmapToFile(hBitmap, L"screenshot.bmp");
+    SaveWatermarkBitmapToFile(hBitmap, L"screenshot_with_watermark.bmp");
 
     // Clean up
     DeleteObject(hBitmap);
@@ -496,6 +496,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         case VK_F3:
             PostMessage(hwnd, WM_COMMAND, MAKELPARAM(3, 0), 0);//MAKELPARAM(3, 0) 的意思是将 3 作为低位字（低 16 位），将 0 作为高位字（高 16 位）最后的0表示无附加消息
             //hwnd: 这是窗口的句柄，表示消息将被发送到的窗口。WM_COMMAND : 这是消息类型，表示发送的是一个命令消息。
+            break;
+        case VK_F4:
+            PostMessage(hwnd, WM_COMMAND, MAKELPARAM(4, 0), 0);
+            break;
+        case VK_F5:
+            PostMessage(hwnd, WM_COMMAND, MAKELPARAM(5, 0), 0);
             break;
         }
         break;
