@@ -26,7 +26,7 @@ struct MyPoint {
 const wchar_t g_szClassName[] = L"myWindowClass";
 const wchar_t g_szOverlayClassName[] = L"myOverlayClass";
 ULONG_PTR gdiplusToken;
-MyPoint startPoint, endPoint;
+MyPoint startPoint, endPoint, oldEndPoint;
 bool capturing = false;
 HWND hOverlayWnd;
 HDC hdcScreen = NULL;
@@ -101,21 +101,25 @@ void CaptureScreenshot() {
     int width = endPoint.x - startPoint.x;
     int height = endPoint.y - startPoint.y;
 
-    if (hdcScreen == NULL) {
-        hdcScreen = GetDC(NULL);
-        hdcMemDC = CreateCompatibleDC(hdcScreen);
-        hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
-        SelectObject(hdcMemDC, hBitmap);
-    }
-
+    HDC hdcScreen = GetDC(NULL);
+    HDC hdcMemDC = CreateCompatibleDC(hdcScreen);
+    HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
+    SelectObject(hdcMemDC, hBitmap);
     BitBlt(hdcMemDC, 0, 0, width, height, hdcScreen, startPoint.x, startPoint.y, SRCCOPY);
 
     SaveBitmapToFile(hBitmap, L"screenshot.png");
+    std::cout << "hello world" << std::endl;
+  //// Display the screenshot
+  //  Bitmap bitmap(hBitmap, nullptr);
+  //  Graphics graphics(GetDesktopWindow());
+  //  graphics.DrawImage(&bitmap, startPoint.x, startPoint.y, width, height);
 
-    if (hOverlayWnd) {
-        DestroyWindow(hOverlayWnd);
-        hOverlayWnd = NULL;
-    }
+    DeleteObject(hBitmap);
+    DeleteDC(hdcMemDC);
+    ReleaseDC(NULL, hdcScreen);
+
+    // Destroy the overlay window
+    DestroyWindow(hOverlayWnd);
 }
 
 void CaptureScreen1920x1080() {
@@ -176,7 +180,7 @@ void FullWindow(const wchar_t* imagePath) {
         return;
     }
 
-    // Create window
+     //Create window
     HWND hWnd = CreateWindowEx(
         WS_EX_LAYERED | WS_EX_TOPMOST,
         L"FullWindowClass",
@@ -198,7 +202,6 @@ void FullWindow(const wchar_t* imagePath) {
 }
 
 
- //Mouse hook procedure
 LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
     if (nCode == HC_ACTION) {
         MSLLHOOKSTRUCT* mouseStruct = (MSLLHOOKSTRUCT*)lParam;
@@ -210,9 +213,15 @@ LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
             std::cout << "Start Point: (" << startPoint.x << ", " << startPoint.y << ")\n";
         }
         else if (wParam == WM_MOUSEMOVE && capturing) {
+            oldEndPoint = endPoint;
             endPoint.x = mouseStruct->pt.x;
             endPoint.y = mouseStruct->pt.y;
-            InvalidateRect(hOverlayWnd, NULL, TRUE);
+            RECT updateRect;
+            updateRect.left = min(min(startPoint.x, endPoint.x), oldEndPoint.x);
+            updateRect.top = min(min(startPoint.y, endPoint.y), oldEndPoint.y);
+            updateRect.right = max(max(startPoint.x, endPoint.x), oldEndPoint.x);
+            updateRect.bottom = max(max(startPoint.y, endPoint.y), oldEndPoint.y);
+            InvalidateRect(hOverlayWnd, &updateRect, TRUE);
         }
         else if (wParam == WM_LBUTTONUP && capturing) {
             endPoint.x = mouseStruct->pt.x;
@@ -226,13 +235,25 @@ LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
 }
 
 LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
+    static HBITMAP hBitmapScreen = nullptr;
+    static HDC hdcScreen = nullptr;
+    static HDC hdcMemDC = nullptr;
+
     switch (msg) {
+    case WM_CREATE: {
+        hdcScreen = GetDC(NULL);
+        hdcMemDC = CreateCompatibleDC(hdcScreen);
+        hBitmapScreen = CreateCompatibleBitmap(hdcScreen, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN));
+        SelectObject(hdcMemDC, hBitmapScreen);
+        BitBlt(hdcMemDC, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), hdcScreen, 0, 0, SRCCOPY);
+        ReleaseDC(NULL, hdcScreen);
+    } break;
     case WM_PAINT: {
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hwnd, &ps);
 
-        // Set semi-transparent brush
-        HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));//����Ϊ��ɫ
+        // Create a semi-transparent brush for overlay
+        HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
         SetBkMode(hdc, TRANSPARENT);
         FillRect(hdc, &ps.rcPaint, hBrush);
 
@@ -243,13 +264,19 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
             rect.top = min(startPoint.y, endPoint.y);
             rect.right = max(startPoint.x, endPoint.x);
             rect.bottom = max(startPoint.y, endPoint.y);
+
+            // Draw the captured screen content in the selected rectangle
+            BitBlt(hdc, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, hdcMemDC, rect.left, rect.top, SRCCOPY);
             FrameRect(hdc, &rect, (HBRUSH)GetStockObject(WHITE_BRUSH));
         }
 
         DeleteObject(hBrush);
         EndPaint(hwnd, &ps);
-    }
-                 break;
+    } break;
+    case WM_DESTROY:
+        DeleteObject(hBitmapScreen);
+        DeleteDC(hdcMemDC);
+        break;
     case WM_LBUTTONDOWN:
     case WM_LBUTTONUP:
     case WM_MOUSEMOVE:
