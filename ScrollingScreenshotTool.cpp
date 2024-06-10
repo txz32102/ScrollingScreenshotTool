@@ -465,7 +465,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         }
         else if (LOWORD(wParam) == 2) {
             CaptureScreen1920x1080();
-            MessageBox(hwnd, L"Screenshot completed!", L"Message", MB_OK);
             // This block handles the command for the control with ID 2
         }
         else if (LOWORD(wParam) == 3) {
@@ -501,7 +500,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         else if (LOWORD(wParam) == 5) {
             //CaptureFullScreenshotWithWatermark();
             CaptureWatermarkScreen1920x1080();
-            MessageBox(hwnd, L"Screenshot completed!", L"Message", MB_OK);
         }
         else if (LOWORD(wParam) == 6) {
             ChooseSaveDirectory(hwnd);
